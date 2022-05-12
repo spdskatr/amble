@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="uk.ac.cam.cl.group15.amble.WalkPaneController"
+      spacing="20" alignment="CENTER">
+    <background>
+        <Background>
+            <fills>
+                <BackgroundFill fill="#ffccff"/>
+            </fills>
+        </Background>
+    </background>
+    <Label text="Walk pane"/>
+</VBox>

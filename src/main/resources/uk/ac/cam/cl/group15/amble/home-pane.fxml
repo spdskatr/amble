@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="uk.ac.cam.cl.group15.amble.HomePaneController"
+            fitToWidth="true" vbarPolicy="NEVER">
+    <VBox spacing="20" alignment="CENTER">
+        <padding>
+            <Insets topRightBottomLeft="50"/>
+        </padding>
+        <background>
+            <Background>
+                <fills>
+                    <BackgroundFill fill="#ccffff"/>
+                </fills>
+            </Background>
+        </background>
+        <Label text="Home pane"/>
+        <!-- Image example -->
+        <ImageView>
+            <Image url="@amble.png" requestedWidth="200" requestedHeight="200"/>
+        </ImageView>
+        <!-- Label example -->
+        <Label fx:id="welcomeText"/>
+        <Label text="More sample text!"/>
+        <!-- Button example -->
+        <Button text="Hello!" onAction="#onHelloButtonClick"/>
+        <Button text="Take a walk" onAction="#onTakeWalkButtonClick"/>
+        <Button text="Settings" onAction="#onEnterSettingsButtonPressed"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+        <Label text="when the impostor is sussy"/>
+    </VBox>
+</ScrollPane>
