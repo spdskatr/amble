@@ -25,3 +25,5 @@ hs_err_pid*
 # IntelliJ extra files
 .attach_pid*
 .idea
+
+target/
