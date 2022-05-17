@@ -26,9 +26,4 @@ public class HomePaneController {
     public void onTakeWalkButtonClick(ActionEvent actionEvent) {
         mainController.switchPaneTo(MainController.PaneType.WALK);
     }
-
-    @FXML
-    public void onEnterSettingsButtonPressed(ActionEvent actionEvent) {
-        mainController.enterSettings();
-    }
 }

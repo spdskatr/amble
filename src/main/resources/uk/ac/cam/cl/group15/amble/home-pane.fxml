@@ -9,10 +9,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="uk.ac.cam.cl.group15.amble.HomePaneController"
-            fitToWidth="true" vbarPolicy="NEVER">
+            fitToWidth="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
     <VBox spacing="20" alignment="CENTER">
         <padding>
             <Insets topRightBottomLeft="50"/>
@@ -35,7 +36,6 @@
         <!-- Button example -->
         <Button text="Hello!" onAction="#onHelloButtonClick"/>
         <Button text="Take a walk" onAction="#onTakeWalkButtonClick"/>
-        <Button text="Settings" onAction="#onEnterSettingsButtonPressed"/>
         <Label text="when the impostor is sussy"/>
         <Label text="when the impostor is sussy"/>
         <Label text="when the impostor is sussy"/>

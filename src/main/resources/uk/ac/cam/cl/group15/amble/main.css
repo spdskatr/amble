@@ -1,3 +1,8 @@
 .navButton {
-    -fx-fill: yellow;
+    -fx-background-color: transparent;
+}
+
+ScrollPane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
 }
