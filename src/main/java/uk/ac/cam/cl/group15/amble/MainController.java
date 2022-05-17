@@ -14,7 +14,6 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-
     public enum PaneType {
         STATS,
         HOME,
@@ -73,6 +72,11 @@ public class MainController implements Initializable {
     @FXML
     protected void onWalkButtonClick() {
         switchPaneTo(PaneType.WALK);
+    }
+
+    @FXML
+    public void onEnterSettingsButtonPressed(ActionEvent actionEvent) {
+        enterSettings();
     }
 
     @FXML

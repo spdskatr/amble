@@ -9,6 +9,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
 <StackPane xmlns:fx="http://javafx.com/fxml" fx:id="mainContainer"
            fx:controller="uk.ac.cam.cl.group15.amble.MainController">
     <VBox alignment="TOP_CENTER" fx:id="settingsView">
@@ -32,10 +33,20 @@
             </Background>
         </background>
 
-        <StackPane fx:id="paneContainer" prefHeight="2000">
-            <fx:include source="stats-pane.fxml" fx:id="statsPane"/>
-            <fx:include source="walk-pane.fxml" fx:id="walkPane"/>
-            <fx:include source="home-pane.fxml" fx:id="homePane"/>
+        <StackPane alignment="TOP_RIGHT">
+            <StackPane fx:id="paneContainer" prefHeight="2000">
+                <fx:include source="stats-pane.fxml" fx:id="statsPane"/>
+                <fx:include source="walk-pane.fxml" fx:id="walkPane"/>
+                <fx:include source="home-pane.fxml" fx:id="homePane"/>
+            </StackPane>
+            <Button onAction="#onEnterSettingsButtonPressed" minWidth="50" minHeight="50" maxWidth="50" maxHeight="50" styleClass="navButton">
+                <padding>
+                    <Insets topRightBottomLeft="10"/>
+                </padding>
+                <graphic>
+                    <FontIcon iconLiteral="fas-cog" iconSize="30"/>
+                </graphic>
+            </Button>
         </StackPane>
 
         <VBox styleClass="nav">
