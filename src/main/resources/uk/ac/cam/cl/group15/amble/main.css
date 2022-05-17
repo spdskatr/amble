@@ -6,3 +6,11 @@ ScrollPane {
     -fx-background-color: transparent;
     -fx-padding: 0;
 }
+
+.smallText{
+    -fx-font-size: 20;
+}
+
+.bigTime{
+    -fx-font-size: 40;
+}
