@@ -15,8 +15,7 @@ public class County {
         List<Route> boundedRoutes = new ArrayList<>();
         for (Route route : routes) {
             if (lowerBound <= route.getDistance() && route.getDistance() <= upperBound) {
-                boundedRoutes.add(route);
-            }
+                boundedRoutes.add(route);}
         }
         return boundedRoutes;
     }
