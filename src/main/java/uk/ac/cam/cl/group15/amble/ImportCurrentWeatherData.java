@@ -74,7 +74,7 @@ public class ImportCurrentWeatherData {
     //given the place name in the form 'Cambridge, UK' it will give the hourly forecast for the next two days
     //it does this by setting the map 'forecast' which is a map from the time to an object
     //this object stores the relevant details for the forecast
-    public Map<LocalDateTime, ImportCurrentWeatherData> getFutureForecast(String placeName){
+    public  Map<LocalDateTime, ImportCurrentWeatherData> getFutureForecast(String placeName){
         //creating the map
         Map<LocalDateTime, ImportCurrentWeatherData> currentForecastMap = new HashMap<>();
         double[] coordinates = new double[] {52.205276, 0.119167}; //getting the coordinates
