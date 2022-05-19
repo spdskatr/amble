@@ -9,6 +9,8 @@ module com.example.amble {
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
     requires org.slf4j;
+    requires com.sothawo.mapjfx;
+    requires org.jsoup;
 
     opens uk.ac.cam.cl.group15.amble to javafx.fxml;
     exports uk.ac.cam.cl.group15.amble;
