@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class HomePaneController implements Initializable {
+public class HomePaneController {
     @FXML
     private Label welcomeText;
     @FXML
@@ -61,9 +61,11 @@ public class HomePaneController implements Initializable {
         return answer;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        walkTime.setText("10:00 - 11:00"); //TODO: Make this output result of TimeSelector.ChooseTime
+    public void postinit() {
+        WalkTime idealWalk =  WalkingAlgorithms.DailyIdealWalk(mainController);
+        walkTime.setText(idealWalk.startTime + " - " + idealWalk.endTime); //TODO: Make this output result of TimeSelector.ChooseTime
+
+
         ImportCurrentWeatherData icwd = new ImportCurrentWeatherData();
         icwd.getCurrentData("Cambridge, UK");
         String weatherDesc = capitalizeFirstLetter(icwd.getWeatherDescription());
