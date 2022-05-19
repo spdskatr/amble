@@ -14,4 +14,9 @@ public class SettingsPaneController {
     public void onExitSettingsButtonPressed(ActionEvent actionEvent) {
         mainController.exitSettings();
     }
+
+    @FXML
+    public void onConfigureTimePressed(ActionEvent actionEvent){
+        System.out.println("hewwo");
+    }
 }
