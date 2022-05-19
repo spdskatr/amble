@@ -17,4 +17,22 @@
     </padding>
     <Text text="Settings"/>
     <Button onAction="#onExitSettingsButtonPressed" text="Exit settings"/>
+
+    <StackPane>
+        <VBox>
+            <HBox styleClass="settingsPanel">
+                <Label text="Preferences" prefWidth="3000"/>
+            </HBox>
+            <HBox styleClass="settingsPanel">
+                <Label text="Configure Recommended Time" prefWidth="3000"/>
+            </HBox>
+            <HBox styleClass="settingsPanel">
+                <Label text="Configure Pace" prefWidth="3000"/>
+            </HBox>
+            <HBox styleClass="settingsPanel">
+                <Label text="Configure Weather Preferences" prefWidth="3000"/>
+            </HBox>
+        </VBox>
+
+    </StackPane>
 </VBox>
