@@ -25,6 +25,7 @@
             </HBox>
             <HBox styleClass="settingsPanel">
                 <Label text="Configure Recommended Time" prefWidth="3000"/>
+                <Button minWidth="80" minHeight="80" onAction="#onConfigureTimePressed"> </Button>
             </HBox>
             <HBox styleClass="settingsPanel">
                 <Label text="Configure Pace" prefWidth="3000"/>

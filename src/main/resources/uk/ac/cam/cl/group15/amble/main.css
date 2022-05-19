@@ -32,6 +32,6 @@ ScrollPane {
 .settingsPanel {
     -fx-background-color: #b5fffa;
     -fx-padding: 10;
-    -fx-border-color: #2e8b57;
+    -fx-border-color: #FFFFFF;
     -fx-border-width: 2px;
 }
