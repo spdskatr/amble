@@ -62,6 +62,7 @@ public class MainController implements Initializable {
         settingsPaneController.setMainController(this);
         forecast = uk.ac.cam.cl.group15.amble.forecast.getForecast();
         homePaneController.postinit();
+        walkPaneController.postInit();
     }
 
     @FXML
