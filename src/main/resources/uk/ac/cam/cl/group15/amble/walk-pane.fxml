@@ -7,13 +7,11 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="uk.ac.cam.cl.group15.amble.WalkPaneController"
       spacing="20" alignment="TOP_CENTER">
-    <padding>
-        <Insets top="50"/>
-    </padding>
     <background>
         <Background>
             <fills>
@@ -21,11 +19,15 @@
             </fills>
         </Background>
     </background>
-    <padding>
-        <Insets top="50"/>
-    </padding>
-    <StackPane>
-        <VBox>
+    <StackPane fx:id="selectorStack">
+        <VBox fx:id="walkSelector">
+            <VBox alignment="CENTER_LEFT" maxHeight="50" minHeight="50">
+                <Button onAction="#onReturnButtonClicked" styleClass="navButton">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-long-arrow-alt-left" iconSize="30"/>
+                    </graphic>
+                </Button>
+            </VBox>
             <HBox styleClass="oddPanel">
                 <Label text="Example 1" prefWidth="3000"/>
             </HBox>
@@ -36,11 +38,24 @@
                 <Label text="Example 3" prefWidth="3000"/>
             </HBox>
         </VBox>
-        <VBox>
-            <HBox styleClass="oddPanel">
-                <Label text="30 minutes" prefWidth="3000"/>
-                <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
-            </HBox>
+        <VBox fx:id="durationSelector">
+            <VBox alignment="CENTER_LEFT" maxHeight="50" minHeight="50">
+                <background>
+                    <Background>
+                        <fills>
+                            <BackgroundFill fill="#e9ff95"/>
+                        </fills>
+                    </Background>
+                </background>
+            </VBox>
+            <Button styleClass="oddPanel" onAction="#onDurationOneButtonClicked">
+                <graphic>
+                    <HBox>
+                        <Label text="30 minutes" prefWidth="3000"/>
+                        <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
+                    </HBox>
+                </graphic>
+            </Button>
             <HBox styleClass="evenPanel">
                 <Label text="1 hour" prefWidth="3000"/>
                 <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
