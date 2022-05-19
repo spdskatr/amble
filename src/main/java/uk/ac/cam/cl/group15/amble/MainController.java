@@ -101,5 +101,6 @@ public class MainController implements Initializable {
         }
         paneContainer.getChildren().removeAll(nodeToSwitch);
         paneContainer.getChildren().addAll(nodeToSwitch);
+        // TODO: Change background colour of the navigation buttons
     }
 }

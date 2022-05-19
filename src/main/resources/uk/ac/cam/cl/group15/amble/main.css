@@ -14,3 +14,13 @@ ScrollPane {
 .bigTime{
     -fx-font-size: 40;
 }
+
+.oddPanel {
+    -fx-background-color: #faffe5;
+    -fx-padding: 10;
+}
+
+.evenPanel {
+    -fx-background-color: #ecf3ce;
+    -fx-padding: 10;
+}

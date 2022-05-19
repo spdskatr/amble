@@ -17,9 +17,39 @@
     <background>
         <Background>
             <fills>
-                <BackgroundFill fill="#ffccff"/>
+                <BackgroundFill fill="#e9ff95"/>
             </fills>
         </Background>
     </background>
-    <Label text="Walk pane"/>
+    <padding>
+        <Insets top="50"/>
+    </padding>
+    <StackPane>
+        <VBox>
+            <HBox styleClass="oddPanel">
+                <Label text="Example 1" prefWidth="3000"/>
+            </HBox>
+            <HBox styleClass="evenPanel">
+                <Label text="Example 2" prefWidth="3000"/>
+            </HBox>
+            <HBox styleClass="oddPanel">
+                <Label text="Example 3" prefWidth="3000"/>
+            </HBox>
+        </VBox>
+        <VBox>
+            <HBox styleClass="oddPanel">
+                <Label text="30 minutes" prefWidth="3000"/>
+                <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
+            </HBox>
+            <HBox styleClass="evenPanel">
+                <Label text="1 hour" prefWidth="3000"/>
+                <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
+            </HBox>
+            <HBox styleClass="oddPanel">
+                <Label text="2 hour" prefWidth="3000"/>
+                <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+    <Label text="Routes"/>
 </VBox>

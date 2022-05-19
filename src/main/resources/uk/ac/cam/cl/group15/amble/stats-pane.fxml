@@ -6,16 +6,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="uk.ac.cam.cl.group15.amble.StatsPaneController"
-        spacing="20" alignment="CENTER">
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uk.ac.cam.cl.group15.amble.StatsPaneController"
+      spacing="20" alignment="TOP_CENTER">
     <background>
         <Background>
             <fills>
-                <BackgroundFill fill="#ffffcc"/>
+                <BackgroundFill fill="#fff3cc"/>
             </fills>
         </Background>
     </background>
-    <Label text="Stats pane"/>
+    <padding>
+        <Insets top="50" left="10" right="10"/>
+    </padding>
+    <HBox minHeight="50">
+        <background>
+            <Background>
+                <fills>
+                    <BackgroundFill fill="#ff9174"/>
+                </fills>
+            </Background>
+        </background>
+    </HBox>
+    <Label text="Goal progress"/>
 </VBox>
