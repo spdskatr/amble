@@ -37,7 +37,7 @@
         <Button text="Hello!" onAction="#onHelloButtonClick"/>
         <Button text="Take a walk" onAction="#onTakeWalkButtonClick"/>
         <Label styleClass="smallText"  text="Recommended Walk Time"/>
-        <Label styleClass="bigTime"  text="00:00 - 00:00"/>
+        <Label fx:id="walkTime" styleClass="bigTime"  text="00:00 - 00:00"/>
 
         <Label text="when the impostor is sussy"/>
         <Label text="when the impostor is sussy"/>
