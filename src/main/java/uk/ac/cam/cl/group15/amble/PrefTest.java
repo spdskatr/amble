@@ -6,12 +6,14 @@ public class PrefTest {
     static Preferences defaultWeatherPref(){
         HashMap<String, pref> weather = new HashMap<>();
         weather.put("Sunny", pref.VERYHIGH);
-        weather.put("Partly Sunny",pref.HIGH);
-        weather.put("Cloudy", pref.MEDIUM);
+        weather.put("Partly Cloudy",pref.HIGH);
+        weather.put("Cloudy",pref.MEDIUM);
         weather.put("Light Rain", pref.LOW);
         weather.put("Rain", pref.VERYLOW);
         weather.put("Snow", pref.MEDIUM);
-        weather.put("Storm", pref.NEVER);
+        weather.put("Mist", pref.LOW);
+        weather.put("Thunderstorm", pref.NEVER);
+        weather.put("Danger", pref.NEVER);
 
         return new Preferences(weather);
     }
