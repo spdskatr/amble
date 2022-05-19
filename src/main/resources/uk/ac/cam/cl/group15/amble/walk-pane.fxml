@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
+<?import com.sothawo.mapjfx.MapView?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="uk.ac.cam.cl.group15.amble.WalkPaneController"
@@ -52,4 +53,10 @@
         </VBox>
     </StackPane>
     <Label text="Routes"/>
+    <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0"
+                prefWidth="350.0">
+        <center>
+            <MapView fx:id="mapView" BorderPane.alignment="CENTER"/>
+        </center>
+    </BorderPane>
 </VBox>
