@@ -29,6 +29,8 @@ public class HomePaneController implements Initializable {
     private Label maxTempMinTemp;
     @FXML
     private Label windSpeed;
+    @FXML
+    private Label feelsLikeLabel;
 
     @FXML
     private VBox mainView;
@@ -55,8 +57,7 @@ public class HomePaneController implements Initializable {
 
         for (int i = 0; i < splitUp.length; i++){
             String temp = Character.toString(Character.toUpperCase(splitUp[i].charAt(0)));
-            throw new IllegalArgumentException();
-            //answer = temp + " ";
+            answer = temp + splitUp[i].substring(1) + " ";
         }
         return answer;
     }
@@ -75,5 +76,6 @@ public class HomePaneController implements Initializable {
         String minTemp = Double.toString(icwd.getMinTemp()) + "°";
         maxTempMinTemp.setText("H:" + maxTemp + "            L:" + minTemp);
         windSpeed.setText("Wind Speed: " + Double.toString(icwd.getWindSpeed()) + "mph");
+        feelsLikeLabel.setText("Feels Like " + Double.toString(icwd.getTempFeelsLike()) + "°");
     }
 }
