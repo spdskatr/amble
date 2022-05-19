@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -50,6 +51,8 @@ public class MainController implements Initializable {
     @FXML
     private SettingsPaneController settingsPaneController;
 
+    public ArrayList<SimpleWeather> forecast;
+
     // Initialise by assigning to child controllers
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -57,6 +60,8 @@ public class MainController implements Initializable {
         statsPaneController.setMainController(this);
         walkPaneController.setMainController(this);
         settingsPaneController.setMainController(this);
+        forecast = uk.ac.cam.cl.group15.amble.forecast.getForecast();
+        homePaneController.postinit();
     }
 
     @FXML

@@ -184,6 +184,20 @@ public class WalkingData {
     }
 
 
+    public static WalkingData sampleData() {
+        WalkingData data = new WalkingData();
+        LocalDateTime now = LocalDateTime.now();
+        for (int days=0; days<10;days++){
+            int dist = 100 + days*10;
+            LocalDateTime endTime = now.minus(days, ChronoUnit.DAYS);
+            LocalDateTime startTime = endTime.minus(2, ChronoUnit.HOURS);
+            data.inputWalk(dist, startTime, endTime);
+        }
+        data.inputWalk();
+        return data;
+    }
+
+
     @Override
     public String toString() {
         return "WalkingData{" +

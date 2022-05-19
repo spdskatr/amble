@@ -30,6 +30,15 @@
         <ImageView>
             <Image url="@amble.png" requestedWidth="200" requestedHeight="200"/>
         </ImageView>
+
+        <Label fx:id="displayWeather"/>
+        <Label fx:id="weatherDescription"/>
+        <Label fx:id="placeName"/>
+        <Label fx:id="temperature" styleClass="bigTime"/>
+        <Label fx:id="maxTempMinTemp"/>
+        <Label fx:id="humidityLabel"/>
+        <Label fx:id="windSpeed"/>
+        <Label fx:id="feelsLikeLabel"/>
         <!-- Label example -->
         <Label fx:id="welcomeText"/>
         <Label text="More sample text!"/>
