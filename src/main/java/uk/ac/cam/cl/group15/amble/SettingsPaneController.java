@@ -19,4 +19,12 @@ public class SettingsPaneController {
     public void onConfigureTimePressed(ActionEvent actionEvent){
         System.out.println("hewwo");
     }
+
+    public void onWeatherConfigPressed(ActionEvent actionEvent) {
+        System.out.println("HIII");
+    }
+
+    public void onConfigurePacePressed(ActionEvent actionEvent) {
+        System.out.println("Eee");
+    }
 }

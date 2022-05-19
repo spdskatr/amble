@@ -23,16 +23,9 @@
             <HBox styleClass="settingsPanel">
                 <Label text="Preferences" prefWidth="3000"/>
             </HBox>
-            <HBox styleClass="settingsPanel">
-                <Label text="Configure Recommended Time" prefWidth="3000"/>
-                <Button minWidth="80" minHeight="80" onAction="#onConfigureTimePressed"> </Button>
-            </HBox>
-            <HBox styleClass="settingsPanel">
-                <Label text="Configure Pace" prefWidth="3000"/>
-            </HBox>
-            <HBox styleClass="settingsPanel">
-                <Label text="Configure Weather Preferences" prefWidth="3000"/>
-            </HBox>
+            <Button styleClass="settingsPanel" onAction="#onConfigureTimePressed" text="Configure Recommended Time" prefWidth="3000"> </Button>
+            <Button styleClass="settingsPanel" onAction="#onConfigurePacePressed" text="Configure Pace" prefWidth="3000"> </Button>
+            <Button styleClass="settingsPanel" onAction="#onWeatherConfigPressed" text="Configure Weather Preferences" prefWidth="3000"> </Button>
         </VBox>
 
     </StackPane>
