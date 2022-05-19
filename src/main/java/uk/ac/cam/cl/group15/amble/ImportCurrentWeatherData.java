@@ -2,15 +2,21 @@ package uk.ac.cam.cl.group15.amble;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.OpenWeatherMapClient;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.enums.Language;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.enums.UnitSystem;
+import uk.ac.cam.cl.group15.amble.openweathermapapi.model.forecast.Forecast;
+import uk.ac.cam.cl.group15.amble.openweathermapapi.model.forecast.WeatherForecast;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.model.onecall.current.CurrentWeatherData;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.model.onecall.current.Hourly;
+import uk.ac.cam.cl.group15.amble.openweathermapapi.model.onecall.historical.HistoricalWeatherData;
+import uk.ac.cam.cl.group15.amble.openweathermapapi.model.onecall.historical.HourlyHistorical;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.model.weather.Weather;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.model.weather.Wind;
 import uk.ac.cam.cl.group15.amble.openweathermapapi.model.*;
 
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.ZoneOffset;
+import java.time.chrono.ChronoLocalDateTime;
+import java.util.*;
 
 public class ImportCurrentWeatherData {
 
@@ -50,7 +56,6 @@ public class ImportCurrentWeatherData {
                 .retrieve()
                 .asJava();
 
-        //System.out.println("CurrentTemp " + weather.getTemperature().getMaxTemperature() + " at " + weather.getLocation().getName());
 
         //these two blocks of code below set the attributes
         Temperature temp = weather.getTemperature();
@@ -61,8 +66,6 @@ public class ImportCurrentWeatherData {
 
         setCurrentTemp(temp.getValue());
         setAirPressure(atm.getValue());
-        setMaxTemp(temp.getMaxTemperature());
-        setMinTemp(temp.getMinTemperature());
         setPlaceName(placeName);
         setWeatherDescription(ws.getDescription());
         setTempFeelsLike(temp.getFeelsLike());
@@ -71,10 +74,51 @@ public class ImportCurrentWeatherData {
 
     }
 
+    //this will get the forecast for the next 5 days - and the max and min temp for those days
+    //it will then return a map from the day (in DayOfWeek form) to a double array
+    //the double array is of the form [minTemp, maxTemp] where the temps are for that day
+    public Map<DayOfWeek, double[]> getForecast5Days (String placeName){
+        Map<DayOfWeek, double[]> sortedForecast = new LinkedHashMap<>();
+        final Forecast forecast = client
+                .forecast5Day3HourStep()
+                .byCityName(placeName)
+                .language(Language.ENGLISH)
+                .unitSystem(UnitSystem.METRIC)
+                .retrieve()
+                .asJava();
+
+
+        for(WeatherForecast wf: forecast.getWeatherForecasts()){
+            DayOfWeek currentTime = wf.getForecastTime().getDayOfWeek();
+            double currentTemp = wf.getTemperature().getValue();
+
+            if (sortedForecast.containsKey(currentTime)){
+                double[] data = sortedForecast.get(currentTime);
+                double currentMin = data[0];
+                double currentMax = data[1];
+
+                if(currentTemp < currentMin){
+                    data[0] = currentTemp;
+                }
+                else if (currentTemp > currentMax){
+                    data[1] = currentTemp;
+                }
+
+                sortedForecast.replace(currentTime, data);
+            }
+            else{
+                double[] newData = new double[]{currentTemp, currentTemp};
+                sortedForecast.put(currentTime, newData);
+            }
+        }
+
+        return sortedForecast;
+    }
+
     //given the place name in the form 'Cambridge, UK' it will give the hourly forecast for the next two days
     //it does this by setting the map 'forecast' which is a map from the time to an object
     //this object stores the relevant details for the forecast
-    public  Map<LocalDateTime, ImportCurrentWeatherData> getFutureForecast(String placeName){
+    public Map<LocalDateTime, ImportCurrentWeatherData> getFutureForecast(String placeName){
         //creating the map
         Map<LocalDateTime, ImportCurrentWeatherData> currentForecastMap = new HashMap<>();
         double[] coordinates = new double[] {52.205276, 0.119167}; //getting the coordinates
@@ -94,16 +138,12 @@ public class ImportCurrentWeatherData {
         for (Hourly hr : forecast.getHourlyList()) {
             ImportCurrentWeatherData tempObject = new ImportCurrentWeatherData();
             LocalDateTime time = hr.getForecastTime();
-
             tempObject.setAirPressure(hr.getAtmosphericPressure().getSeaLevelValue());
             tempObject.setCurrentTemp(hr.getTemperature().getValue());
             tempObject.setWindSpeed(hr.getWind().getSpeed());
             tempObject.setHumidity(hr.getHumidity().getValue());
             tempObject.setWeatherDescription(hr.getWeatherState().getDescription());
             tempObject.setProbOfRain(hr.getProbabilityOfPrecipitation());
-
-            System.out.println("Time " + time);
-            System.out.println("Temp " + hr.getTemperature().getValue());
 
             currentForecastMap.put(time, tempObject);
         }
@@ -184,7 +224,8 @@ public class ImportCurrentWeatherData {
     public static void main(String[] args) {
         ImportCurrentWeatherData icwd = new ImportCurrentWeatherData();
         icwd.retrieveApiKey();
-        icwd.getFutureForecast("Cambridge, UK");
-        icwd.getCurrentData("Cambridge, UK");
+        //icwd.getFutureForecast("Cambridge, UK");
+        //icwd.getCurrentData("Cambridge, UK");
+        //icwd.getForecast5Days("Cambridge, UK");
     }
 }

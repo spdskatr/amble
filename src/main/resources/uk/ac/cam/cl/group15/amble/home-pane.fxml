@@ -33,20 +33,55 @@
 
         <Label fx:id="displayWeather"/>
         <Label fx:id="weatherDescription"/>
-        <Label fx:id="placeName"/>
+        <!--<Label fx:id="placeName"/>-->
         <Label fx:id="temperature" styleClass="bigTime"/>
-        <Label fx:id="maxTempMinTemp"/>
-        <Label fx:id="humidityLabel"/>
-        <Label fx:id="windSpeed"/>
-        <Label fx:id="feelsLikeLabel"/>
-        <!-- Label example -->
-        <Label fx:id="welcomeText"/>
-        <Label text="More sample text!"/>
+        <Label fx:id="date" styleClass="medium"/>
+
         <!-- Button example -->
         <Button text="Hello!" onAction="#onHelloButtonClick"/>
         <Button text="Take a walk" onAction="#onTakeWalkButtonClick"/>
         <Label styleClass="smallText"  text="Recommended Walk Time"/>
         <Label fx:id="walkTime" styleClass="bigTime"  text="00:00 - 00:00"/>
+
+        <!-- CurrentWeatherData -->
+        <StackPane>
+            <VBox>
+                <HBox styleClass="oddPanel">
+                    <Label fx:id="humidityLabel" alignment="BASELINE_LEFT" prefWidth="3000"/>
+                    <Label fx:id="windSpeed" alignment="BASELINE_RIGHT" prefWidth="3000"/>
+                </HBox>
+                <HBox styleClass="evenPanel">
+                    <Label fx:id="airPressure" alignment="BASELINE_LEFT" prefWidth="3000"/>
+                    <Label fx:id="feelsLikeLabel" alignment="BASELINE_RIGHT" prefWidth="3000"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+
+        <!-- Forecasts -->
+        <StackPane>
+            <VBox>
+                <HBox styleClass="oddPanel">
+                    <Label fx:id="day1Forecast" alignment="CENTER" prefWidth="3000"/>
+                </HBox>
+                <HBox styleClass="evenPanel">
+                    <Label fx:id="day2Forecast" alignment="CENTER" prefWidth="3000"/>
+                </HBox>
+                <HBox styleClass="oddPanel">
+                    <Label fx:id="day3Forecast" alignment="CENTER" prefWidth="3000"/>
+                </HBox>
+                <HBox styleClass="evenPanel">
+                    <Label fx:id="day4Forecast" alignment="CENTER" prefWidth="3000"/>
+                </HBox>
+                <HBox styleClass="oddPanel">
+                    <Label fx:id="day5Forecast" alignment="CENTER" prefWidth="3000"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+
+        <!-- Label example -->
+        <Label fx:id="welcomeText"/>
+        <Label text="More sample text!"/>
+
 
         <Label text="when the impostor is sussy"/>
         <Label text="when the impostor is sussy"/>
