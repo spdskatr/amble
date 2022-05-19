@@ -38,8 +38,8 @@
         <Label fx:id="date" styleClass="medium"/>
 
         <!-- Button example -->
-        <Button text="Hello!" onAction="#onHelloButtonClick"/>
-        <Button text="Take a walk" onAction="#onTakeWalkButtonClick"/>
+        <!--<Button text="Hello!" onAction="#onHelloButtonClick"/>
+        <Button text="Take a walk" onAction="#onTakeWalkButtonClick"/> -->
         <Label styleClass="smallText"  text="Recommended Walk Time"/>
         <Label fx:id="walkTime" styleClass="bigTime"  text="00:00 - 00:00"/>
 
