@@ -104,10 +104,14 @@ public class HomePaneController {
         return answer;
     }
 
-    public void postinit() {
+    //used so that the walk time text will be changed when preferences change
+    public void onPreferenceChange(){
         WalkTime idealWalk =  WalkingAlgorithms.DailyIdealWalk(mainController);
-        walkTime.setText(idealWalk.startTime + " - " + idealWalk.endTime); //TODO: Make this output result of TimeSelector.ChooseTime
+        walkTime.setText(idealWalk.startTime + " - " + idealWalk.endTime);
+    }
 
+    public void postinit() {
+        onPreferenceChange();
 
         ImportCurrentWeatherData icwd = new ImportCurrentWeatherData();
         icwd.getCurrentData("Cambridge, UK");
