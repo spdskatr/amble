@@ -25,10 +25,9 @@
                 </fills>
             </Background>
         </background>
-        <Label text="Home pane"/>
         <!-- Image example -->
         <ImageView>
-            <Image url="@amble.png" requestedWidth="200" requestedHeight="200"/>
+            <Image url="@sunny.png" requestedWidth="300" requestedHeight="300"/>
         </ImageView>
 
         <Label fx:id="displayWeather"/>

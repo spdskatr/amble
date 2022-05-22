@@ -8,6 +8,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.canvas.Canvas?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="uk.ac.cam.cl.group15.amble.StatsPaneController"
@@ -22,14 +23,6 @@
     <padding>
         <Insets top="50" left="10" right="10"/>
     </padding>
-    <HBox minHeight="50">
-        <background>
-            <Background>
-                <fills>
-                    <BackgroundFill fill="#ff9174"/>
-                </fills>
-            </Background>
-        </background>
-    </HBox>
+    <ProgressBar minHeight="50" progress="0.25" prefWidth="3000" styleClass="goalProgress"/>
     <Label text="Goal progress"/>
 </VBox>

@@ -35,3 +35,10 @@ ScrollPane {
     -fx-border-color: #FFFFFF;
     -fx-border-width: 2px;
 }
+
+.goalProgress {
+    -fx-background-color: #fff3cc;
+    -fx-control-inner-background: #fff3cc;
+    -fx-text-box-border: #ff9174;
+    -fx-accent: #ff9174;
+}

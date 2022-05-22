@@ -31,7 +31,8 @@ public class WalkPaneController {
     }
 
     public void postInit() {
-        initMapAndControls(Projection.WEB_MERCATOR);
+        // TODO: Remove this comment for demo
+        //initMapAndControls(Projection.WEB_MERCATOR);
     }
 
     @FXML
