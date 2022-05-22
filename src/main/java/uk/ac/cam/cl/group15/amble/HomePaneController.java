@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class HomePaneController {
@@ -39,15 +40,22 @@ public class HomePaneController {
 
     //the following are the labels for the forecast - the next 5 days
     @FXML
-    private Label day1Forecast;
+    private Label day1Forecast, day2Forecast, day3Forecast, day4Forecast, day5Forecast;
+
+
+    //the following are the labels for the hour by hour future forecast
+    //it will include the temperature and the weather description
     @FXML
-    private Label day2Forecast;
+    private Label hour1Forecast, hour2Forecast, hour3Forecast, hour4Forecast, hour5Forecast, hour6Forecast, hour7Forecast, hour8Forecast, hour9Forecast;
     @FXML
-    private Label day3Forecast;
+    private Label hour10Forecast, hour11Forecast, hour12Forecast, hour13Forecast, hour14Forecast, hour15Forecast, hour16Forecast, hour17Forecast, hour18Forecast;
     @FXML
-    private Label day4Forecast;
+    private Label hour19Forecast, hour20Forecast, hour21Forecast, hour22Forecast, hour23Forecast, hour24Forecast;
+
     @FXML
-    private Label day5Forecast;
+    private ImageView imgHour1, imgHour2, imgHour3, imgHour4, imgHour5, imgHour6, imgHour7, imgHour8, imgHour9, imgHour10, imgHour11, imgHour12, imgHour13, imgHour14;
+    @FXML
+    private ImageView imgHour15, imgHour16, imgHour17, imgHour18, imgHour19, imgHour20, imgHour21, imgHour22, imgHour23, imgHour24;
 
     @FXML
     private VBox mainView;
@@ -110,7 +118,14 @@ public class HomePaneController {
         walkTime.setText(idealWalk.startTime + " - " + idealWalk.endTime);
     }
 
-    // TODO: Rename to postInit
+    //function that when given the LocalDateTime will produce the day and time int the form Monday 22:00
+    public String timeFormatter(LocalDateTime time){
+        String day = capitalizeFirstLetter(time.getDayOfWeek().name());
+        //LocalDateTime time2 = LocalDateTime.parse(localTimeString, DateTimeFormatter.ISO_DATE_TIME);
+        String strTime = time.format(DateTimeFormatter.ofPattern("HH:mm"));
+        return (day + strTime);
+    }
+
     public void postinit() {
         onPreferenceChange();
 
@@ -133,6 +148,60 @@ public class HomePaneController {
         day3Forecast.setText(capitalizeFirstLetter(listKeys.get(2).name()) + " \t\tL: " + Double.toString(forecast5Days.get(listKeys.get(2))[0]) + "°" + "  H: " + Double.toString(forecast5Days.get(listKeys.get(2))[1]) + "°");
         day4Forecast.setText(capitalizeFirstLetter(listKeys.get(3).name()) + " \t\tL: " + Double.toString(forecast5Days.get(listKeys.get(3))[0]) + "°" + "  H: " + Double.toString(forecast5Days.get(listKeys.get(3))[1]) + "°");
         day5Forecast.setText(capitalizeFirstLetter(listKeys.get(4).name()) + " \t\tL: " + Double.toString(forecast5Days.get(listKeys.get(4))[0]) + "°" + "  H: " + Double.toString(forecast5Days.get(listKeys.get(4))[1]) + "°");
+
+        Map<LocalDateTime, ImportCurrentWeatherData> hourByHourForecast = icwd.getFutureForecast("Cambridge, UK");
+        List<LocalDateTime> keyList = new ArrayList<>(hourByHourForecast.keySet());
+        Collections.sort(keyList);
+        hour1Forecast.setText( timeFormatter(keyList.get(0)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(0)).getCurrentTemp()) + "°");
+        hour2Forecast.setText( timeFormatter(keyList.get(1)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(1)).getCurrentTemp()) + "°");
+        hour3Forecast.setText( timeFormatter(keyList.get(2)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(2)).getCurrentTemp()) + "°");
+        hour4Forecast.setText( timeFormatter(keyList.get(3)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(3)).getCurrentTemp()) + "°");
+        hour5Forecast.setText( timeFormatter(keyList.get(4)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(4)).getCurrentTemp()) + "°");
+        hour6Forecast.setText( timeFormatter(keyList.get(5)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(5)).getCurrentTemp()) + "°");
+        hour7Forecast.setText( timeFormatter(keyList.get(6)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(6)).getCurrentTemp()) + "°");
+        hour8Forecast.setText( timeFormatter(keyList.get(7)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(7)).getCurrentTemp()) + "°");
+        hour9Forecast.setText( timeFormatter(keyList.get(8)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(8)).getCurrentTemp()) + "°");
+        hour10Forecast.setText( timeFormatter(keyList.get(9)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(9)).getCurrentTemp()) + "°");
+        hour11Forecast.setText( timeFormatter(keyList.get(10)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(10)).getCurrentTemp()) + "°");
+        hour12Forecast.setText( timeFormatter(keyList.get(11)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(11)).getCurrentTemp()) + "°");
+        hour13Forecast.setText( timeFormatter(keyList.get(12)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(12)).getCurrentTemp()) + "°");
+        hour14Forecast.setText( timeFormatter(keyList.get(13)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(13)).getCurrentTemp()) + "°");
+        hour15Forecast.setText( timeFormatter(keyList.get(14)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(14)).getCurrentTemp()) + "°");
+        hour16Forecast.setText( timeFormatter(keyList.get(15)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(15)).getCurrentTemp()) + "°");
+        hour17Forecast.setText( timeFormatter(keyList.get(16)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(16)).getCurrentTemp()) + "°");
+        hour18Forecast.setText( timeFormatter(keyList.get(17)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(17)).getCurrentTemp()) + "°");
+        hour19Forecast.setText( timeFormatter(keyList.get(18)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(18)).getCurrentTemp()) + "°");
+        hour20Forecast.setText( timeFormatter(keyList.get(19)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(19)).getCurrentTemp()) + "°");
+        hour21Forecast.setText( timeFormatter(keyList.get(20)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(20)).getCurrentTemp()) + "°");
+        hour22Forecast.setText( timeFormatter(keyList.get(21)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(21)).getCurrentTemp()) + "°");
+        hour23Forecast.setText( timeFormatter(keyList.get(22)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(22)).getCurrentTemp()) + "°");
+        hour24Forecast.setText( timeFormatter(keyList.get(23)) + " :\t\t" + Double.toString(hourByHourForecast.get(keyList.get(23)).getCurrentTemp()) + "°");
+
+        imgHour1.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(0)).getWeatherIconId() + "@2x.png"));
+        imgHour2.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(1)).getWeatherIconId() + "@2x.png"));
+        imgHour3.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(2)).getWeatherIconId() + "@2x.png"));
+        imgHour4.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(3)).getWeatherIconId() + "@2x.png"));
+        imgHour5.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(4)).getWeatherIconId() + "@2x.png"));
+        imgHour6.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(5)).getWeatherIconId() + "@2x.png"));
+        imgHour7.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(6)).getWeatherIconId() + "@2x.png"));
+        imgHour8.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(7)).getWeatherIconId() + "@2x.png"));
+        imgHour9.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(8)).getWeatherIconId() + "@2x.png"));
+        imgHour10.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(9)).getWeatherIconId() + "@2x.png"));
+        imgHour11.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(10)).getWeatherIconId() + "@2x.png"));
+        imgHour12.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(11)).getWeatherIconId() + "@2x.png"));
+        imgHour13.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(12)).getWeatherIconId() + "@2x.png"));
+        imgHour14.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(13)).getWeatherIconId() + "@2x.png"));
+        imgHour15.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(14)).getWeatherIconId() + "@2x.png"));
+        imgHour16.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(15)).getWeatherIconId() + "@2x.png"));
+        imgHour17.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(16)).getWeatherIconId() + "@2x.png"));
+        imgHour18.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(17)).getWeatherIconId() + "@2x.png"));
+        imgHour19.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(18)).getWeatherIconId() + "@2x.png"));
+        imgHour20.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(19)).getWeatherIconId() + "@2x.png"));
+        imgHour21.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(20)).getWeatherIconId() + "@2x.png"));
+        imgHour22.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(21)).getWeatherIconId() + "@2x.png"));
+        imgHour23.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(22)).getWeatherIconId() + "@2x.png"));
+        imgHour24.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(23)).getWeatherIconId() + "@2x.png"));
+
 
     }
 }

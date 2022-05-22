@@ -23,7 +23,7 @@ public class ImportCurrentWeatherData {
     //private variables for all of the relevant details
     private static OpenWeatherMapClient client;
     private double currentTemp, maxTemp, minTemp, tempFeelsLike, airPressure, windSpeed, humidity, probOfRain;
-    private String weatherDescription, placeName;
+    private String weatherDescription, placeName, weatherIconId;
 
     //this map is used to store the forecast
     //the ImportCurrentWeatherData object stores all of the relevant details for the future forecasts
@@ -55,7 +55,6 @@ public class ImportCurrentWeatherData {
                 .unitSystem(UnitSystem.METRIC)
                 .retrieve()
                 .asJava();
-
 
         //these two blocks of code below set the attributes
         Temperature temp = weather.getTemperature();
@@ -144,7 +143,7 @@ public class ImportCurrentWeatherData {
             tempObject.setHumidity(hr.getHumidity().getValue());
             tempObject.setWeatherDescription(hr.getWeatherState().getDescription());
             tempObject.setProbOfRain(hr.getProbabilityOfPrecipitation());
-
+            tempObject.setWeatherIconId(hr.getWeatherState().getIconId());
             currentForecastMap.put(time, tempObject);
         }
         return currentForecastMap;
@@ -185,6 +184,9 @@ public class ImportCurrentWeatherData {
     public void setProbOfRain(double probOfRain) {
         this.probOfRain = probOfRain;
     }
+    public void setWeatherIconId(String weatherIconId) {
+        this.weatherIconId = weatherIconId;
+    }
 
     //GETTERS
     public double getAirPressure() {
@@ -219,6 +221,9 @@ public class ImportCurrentWeatherData {
     }
     public Map<LocalDateTime, ImportCurrentWeatherData> getForecast() {
         return forecast;
+    }
+    public String getWeatherIconId() {
+        return weatherIconId;
     }
 
     public static void main(String[] args) {
