@@ -8,10 +8,10 @@ public class TimeSelector {
     private static ArrayList<SimpleWeather> hourlyWeather;
 
     //inputs a list of the Weather every hour this day and the duration of walk in minutes
-    public static WalkTime chooseTime(ArrayList<SimpleWeather> today, int duration){
+    public static WalkTime chooseTime(ArrayList<SimpleWeather> today, int duration, Preferences weatherPref, Preferences timePref){
         hourlyWeather = new ArrayList<>();
-        Preferences weatherPrefs = PrefTest.defaultWeatherPref(); //eventually will be stored as a file
-        Preferences timePrefs = PrefTest.defaultTimePref(); //eventually will be stored as a file
+        Preferences weatherPrefs = weatherPref;
+        Preferences timePrefs = timePref;
 
         for(SimpleWeather w : today){
             if(!timePrefs.getPreference(w.getHour() + "").equals(pref.NEVER)) {
@@ -100,14 +100,14 @@ public class TimeSelector {
         return new WalkTime(idealWalk, idealWalkTime, endTime);
     }
 
-    public static ArrayList<WalkTime> chooseTime(ArrayList<SimpleWeather> today, int duration, int n){
+    public static ArrayList<WalkTime> chooseTime(ArrayList<SimpleWeather> today, int duration, int n, Preferences weatherPref, Preferences timePref){
         if(n > today.size()){
             throw new RuntimeException("Requesting more times then there are hours in the day.");
         }
 
         hourlyWeather = new ArrayList<>();
-        Preferences weatherPrefs = PrefTest.defaultWeatherPref(); //eventually will be stored as a file
-        Preferences timePrefs = PrefTest.defaultTimePref(); //eventually will be stored as a file
+        Preferences weatherPrefs = weatherPref;
+        Preferences timePrefs = timePref;
 
         for(SimpleWeather w : today){
             if(!timePrefs.getPreference(w.getHour() + "").equals(pref.NEVER)) {
@@ -279,9 +279,7 @@ public class TimeSelector {
         return pair;
     }
 
-    //TODO: Work out why it's not showing walks at midnight
-
-    //TODO: Implement utilising global preferences
+    //TODO: Work out why it's not showing walks at midnight (ask Maan if this is on purpose)
 
     //TODO: Then sort out the preferences menu itself
 

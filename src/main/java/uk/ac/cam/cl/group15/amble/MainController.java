@@ -52,6 +52,8 @@ public class MainController implements Initializable {
     private SettingsPaneController settingsPaneController;
 
     public ArrayList<SimpleWeather> forecast;
+    public Preferences weatherPref;
+    public Preferences timePref;
 
     // Initialise by assigning to child controllers
     @Override
@@ -60,7 +62,13 @@ public class MainController implements Initializable {
         statsPaneController.setMainController(this);
         walkPaneController.setMainController(this);
         settingsPaneController.setMainController(this);
+
+        //Setting Global Program Variables
         forecast = uk.ac.cam.cl.group15.amble.forecast.getForecast();
+        weatherPref = PrefTest.defaultWeatherPref(); //eventually may store locally if time
+        timePref = PrefTest.defaultTimePref();
+
+        //Running post initialisation functions for child panes
         homePaneController.postinit();
         walkPaneController.postInit();
     }
