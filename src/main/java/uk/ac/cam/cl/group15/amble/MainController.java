@@ -71,6 +71,7 @@ public class MainController implements Initializable {
         //Running post initialisation functions for child panes
         homePaneController.postinit();
         walkPaneController.postInit();
+        statsPaneController.postInit();
     }
 
     @FXML

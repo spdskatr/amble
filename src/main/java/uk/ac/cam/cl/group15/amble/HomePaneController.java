@@ -110,6 +110,7 @@ public class HomePaneController {
         walkTime.setText(idealWalk.startTime + " - " + idealWalk.endTime);
     }
 
+    // TODO: Rename to postInit
     public void postinit() {
         onPreferenceChange();
 

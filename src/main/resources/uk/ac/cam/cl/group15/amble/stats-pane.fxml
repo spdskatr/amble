@@ -9,6 +9,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="uk.ac.cam.cl.group15.amble.StatsPaneController"
@@ -25,4 +28,9 @@
     </padding>
     <ProgressBar minHeight="50" progress="0.25" prefWidth="3000" styleClass="goalProgress"/>
     <Label text="Goal progress"/>
+    <BarChart fx:id="barChartTotalDistance" styleClass="barChart">
+        <xAxis><CategoryAxis/></xAxis>
+        <yAxis><NumberAxis/></yAxis>
+        <title>Total Distance</title>
+    </BarChart>
 </VBox>

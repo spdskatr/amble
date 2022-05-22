@@ -42,3 +42,10 @@ ScrollPane {
     -fx-text-box-border: #ff9174;
     -fx-accent: #ff9174;
 }
+
+.barChart {
+    -fx-stroke: #ff9174;
+}
+.chart-bar {
+    -fx-background-color: #ff9174;
+}
