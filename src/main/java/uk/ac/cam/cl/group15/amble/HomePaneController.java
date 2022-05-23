@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import uk.ac.cam.cl.group15.amble.openweathermapapi.InvalidTimeException;
 
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
@@ -114,8 +115,13 @@ public class HomePaneController {
 
     //used so that the walk time text will be changed when preferences change
     public void onPreferenceChange(){
-        WalkTime idealWalk =  WalkingAlgorithms.DailyIdealWalk(mainController);
-        walkTime.setText(idealWalk.startTime + " - " + idealWalk.endTime);
+        try {
+            WalkTime idealWalk = WalkingAlgorithms.DailyIdealWalk(mainController);
+            walkTime.setText(idealWalk.startTime + " - " + idealWalk.endTime);
+        }
+        catch(InvalidTimeException e){
+            walkTime.setText("Oops! No Times available that match your preferences. :(");
+        }
     }
 
     //function that when given the LocalDateTime will produce the day and time int the form Monday 22:00

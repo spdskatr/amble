@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import com.sothawo.mapjfx.*;
 import javafx.fxml.FXML;
 import javafx.scene.paint.Color;
+import uk.ac.cam.cl.group15.amble.openweathermapapi.InvalidTimeException;
 
 import java.util.List;
 
@@ -49,26 +50,40 @@ public class WalkPaneController {
         // TODO: Remove this comment for demo
         //initMapAndControls(Projection.WEB_MERCATOR);
 
-        WalkTime halfHourTime = TimeSelector.chooseTime(mainController.forecast, 30, mainController.weatherPref, mainController.timePref);
-        WalkTime oneHourTime = TimeSelector.chooseTime(mainController.forecast, 60, mainController.weatherPref, mainController.timePref);
-        WalkTime twoHourTime = TimeSelector.chooseTime(mainController.forecast, 120, mainController.weatherPref, mainController.timePref);
+        try {
+            WalkTime halfHourTime = TimeSelector.chooseTime(mainController.forecast, 30, mainController.weatherPref, mainController.timePref);
+            WalkTime oneHourTime = TimeSelector.chooseTime(mainController.forecast, 60, mainController.weatherPref, mainController.timePref);
+            WalkTime twoHourTime = TimeSelector.chooseTime(mainController.forecast, 120, mainController.weatherPref, mainController.timePref);
 
-        durationOneTimeSummary.setText(String.valueOf(halfHourTime));
-        durationTwoTimeSummary.setText(String.valueOf(oneHourTime));
-        durationThreeTimeSummary.setText(String.valueOf(twoHourTime));
+            durationOneTimeSummary.setText(String.valueOf(halfHourTime));
+            durationTwoTimeSummary.setText(String.valueOf(oneHourTime));
+            durationThreeTimeSummary.setText(String.valueOf(twoHourTime));
+        }
+        catch (InvalidTimeException e){
+            durationOneTimeSummary.setText("Sorry no available times :(");
+            durationTwoTimeSummary.setText("Sorry no available times :(");
+            durationThreeTimeSummary.setText("Sorry no available times :(");
+        }
 
         specificLabels = List.of(specificTimeSummaryOne, specificTimeSummaryTwo, specificTimeSummaryThree);
     }
 
     public void onPreferenceChange(){
         //TODO: should recalculate all the walk times here
-        WalkTime halfHourTime = TimeSelector.chooseTime(mainController.forecast, 30, mainController.weatherPref, mainController.timePref);
-        WalkTime oneHourTime = TimeSelector.chooseTime(mainController.forecast, 60, mainController.weatherPref, mainController.timePref);
-        WalkTime twoHourTime = TimeSelector.chooseTime(mainController.forecast, 120, mainController.weatherPref, mainController.timePref);
+        try {
+            WalkTime halfHourTime = TimeSelector.chooseTime(mainController.forecast, 30, mainController.weatherPref, mainController.timePref);
+            WalkTime oneHourTime = TimeSelector.chooseTime(mainController.forecast, 60, mainController.weatherPref, mainController.timePref);
+            WalkTime twoHourTime = TimeSelector.chooseTime(mainController.forecast, 120, mainController.weatherPref, mainController.timePref);
 
-        durationOneTimeSummary.setText(String.valueOf(halfHourTime));
-        durationTwoTimeSummary.setText(String.valueOf(oneHourTime));
-        durationThreeTimeSummary.setText(String.valueOf(twoHourTime));
+            durationOneTimeSummary.setText(String.valueOf(halfHourTime));
+            durationTwoTimeSummary.setText(String.valueOf(oneHourTime));
+            durationThreeTimeSummary.setText(String.valueOf(twoHourTime));
+        }
+        catch (InvalidTimeException e){
+            durationOneTimeSummary.setText("Sorry no available times :(");
+            durationTwoTimeSummary.setText("Sorry no available times :(");
+            durationThreeTimeSummary.setText("Sorry no available times :(");
+        }
     }
 
     @FXML
@@ -109,10 +124,17 @@ public class WalkPaneController {
     }
 
     private void populateSubPanels(ActionEvent actionEvent, int duration) {
-        List<WalkTime> times = TimeSelector.chooseTime(mainController.forecast, duration, 3,
-                mainController.weatherPref, mainController.timePref);
-        for (int i = 0; i < 3; i++) {
-            specificLabels.get(i).setText(String.valueOf(times.get(i)));
+        try {
+            List<WalkTime> times = TimeSelector.chooseTime(mainController.forecast, duration, 3,
+                    mainController.weatherPref, mainController.timePref);
+            for (int i = 0; i < 3; i++) {
+                specificLabels.get(i).setText(String.valueOf(times.get(i)));
+            }
+        }
+        catch(InvalidTimeException e){
+            for (int i = 0; i < 3; i++) {
+                specificLabels.get(i).setText(":( No available times");
+            }
         }
     }
 

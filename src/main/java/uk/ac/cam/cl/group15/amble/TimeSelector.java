@@ -1,5 +1,7 @@
 package uk.ac.cam.cl.group15.amble;
 
+import uk.ac.cam.cl.group15.amble.openweathermapapi.InvalidTimeException;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
@@ -8,7 +10,7 @@ public class TimeSelector {
     private static ArrayList<SimpleWeather> hourlyWeather;
 
     //inputs a list of the Weather every hour this day and the duration of walk in minutes
-    public static WalkTime chooseTime(ArrayList<SimpleWeather> today, int duration, Preferences weatherPref, Preferences timePref){
+    public static WalkTime chooseTime(ArrayList<SimpleWeather> today, int duration, Preferences weatherPref, Preferences timePref) throws InvalidTimeException {
         hourlyWeather = new ArrayList<>();
         Preferences weatherPrefs = weatherPref;
         Preferences timePrefs = timePref;
@@ -34,8 +36,7 @@ public class TimeSelector {
         }
 
         if(storage.firstKey().equals(pref.NEVER)){
-            System.out.println("L + Ratio + Oh no you can't walk");
-            return null;
+            throw new InvalidTimeException();
         }
         ArrayList<SimpleWeather> ideal = storage.firstEntry().getValue();
 
@@ -100,9 +101,9 @@ public class TimeSelector {
         return new WalkTime(idealWalk, idealWalkTime, endTime);
     }
 
-    public static ArrayList<WalkTime> chooseTime(ArrayList<SimpleWeather> today, int duration, int n, Preferences weatherPref, Preferences timePref){
+    public static ArrayList<WalkTime> chooseTime(ArrayList<SimpleWeather> today, int duration, int n, Preferences weatherPref, Preferences timePref) throws InvalidTimeException {
         if(n > today.size()){
-            throw new RuntimeException("Requesting more times then there are hours in the day.");
+            throw new InvalidTimeException();
         }
 
         hourlyWeather = new ArrayList<>();
@@ -130,8 +131,7 @@ public class TimeSelector {
         }
 
         if(storage.firstKey().equals(pref.NEVER)){
-            System.out.println("L + Ratio + Oh no you can't walk"); //TODO: Actually Implement these errors lol
-            return null;
+            throw new InvalidTimeException();
         }
 
         ArrayList<WalkTime> walkTimes = new ArrayList<>();
