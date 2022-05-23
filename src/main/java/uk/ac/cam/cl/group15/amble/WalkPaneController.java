@@ -26,6 +26,14 @@ public class WalkPaneController {
     public Label durationTwoTimeSummary;
     @FXML
     public Label durationThreeTimeSummary;
+    @FXML
+    public Label specificTimeSummaryOne;
+    @FXML
+    public Label specificTimeSummaryTwo;
+    @FXML
+    public Label specificTimeSummaryThree;
+
+    private List<Label> specificLabels;
     private MainController mainController;
 
     private static final int ZOOM_DEFAULT = 14;
@@ -48,6 +56,8 @@ public class WalkPaneController {
         durationOneTimeSummary.setText(String.valueOf(halfHourTime));
         durationTwoTimeSummary.setText(String.valueOf(oneHourTime));
         durationThreeTimeSummary.setText(String.valueOf(twoHourTime));
+
+        specificLabels = List.of(specificTimeSummaryOne, specificTimeSummaryTwo, specificTimeSummaryThree);
     }
 
     @FXML
@@ -87,16 +97,26 @@ public class WalkPaneController {
         selectorStack.getChildren().addAll(walkSelector);
     }
 
-    public void onDurationOneButtonClicked(ActionEvent actionEvent) {
+    private void populateSubPanels(ActionEvent actionEvent, int duration) {
+        List<WalkTime> times = TimeSelector.chooseTime(mainController.forecast, duration, 3,
+                mainController.weatherPref, mainController.timePref);
+        for (int i = 0; i < 3; i++) {
+            specificLabels.get(i).setText(String.valueOf(times.get(i)));
+        }
+    }
 
+    public void onDurationOneButtonClicked(ActionEvent actionEvent) {
+        populateSubPanels(actionEvent, 30);
         switchToWalkSelector(actionEvent);
     }
 
     public void onDurationTwoButtonClicked(ActionEvent actionEvent) {
+        populateSubPanels(actionEvent, 60);
         switchToWalkSelector(actionEvent);
     }
 
     public void onDurationThreeButtonClicked(ActionEvent actionEvent) {
+        populateSubPanels(actionEvent, 120);
         switchToWalkSelector(actionEvent);
     }
 }

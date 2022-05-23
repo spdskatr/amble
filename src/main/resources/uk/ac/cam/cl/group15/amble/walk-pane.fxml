@@ -30,13 +30,13 @@
                 </Button>
             </VBox>
             <HBox styleClass="oddPanel">
-                <Label text="Example 1" prefWidth="3000"/>
+                <Label fx:id="specificTimeSummaryOne" text="Example 1" prefWidth="3000"/>
             </HBox>
             <HBox styleClass="evenPanel">
-                <Label text="Example 2" prefWidth="3000"/>
+                <Label fx:id="specificTimeSummaryTwo" text="Example 2" prefWidth="3000"/>
             </HBox>
             <HBox styleClass="oddPanel">
-                <Label text="Example 3" prefWidth="3000"/>
+                <Label fx:id="specificTimeSummaryThree" text="Example 3" prefWidth="3000"/>
             </HBox>
         </VBox>
         <VBox fx:id="durationSelector">
