@@ -1,7 +1,5 @@
 package uk.ac.cam.cl.group15.amble;
 
-import uk.ac.cam.cl.group15.amble.openweathermapapi.InvalidTimeException;
-
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
@@ -20,6 +18,10 @@ public class TimeSelector {
                 hourlyWeather.add(w);
             }
         }
+        if(hourlyWeather.size() == 0){
+            throw new InvalidTimeException();
+        }
+
         TreeMap<pref,ArrayList<SimpleWeather>> storage = new TreeMap<>();
 
         for(SimpleWeather w: hourlyWeather){

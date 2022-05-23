@@ -1,7 +1,5 @@
 package uk.ac.cam.cl.group15.amble;
 
-import uk.ac.cam.cl.group15.amble.openweathermapapi.InvalidTimeException;
-
 import java.util.ArrayList;
 
 public class WalkingAlgorithms {

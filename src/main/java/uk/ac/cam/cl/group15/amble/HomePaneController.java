@@ -2,19 +2,16 @@ package uk.ac.cam.cl.group15.amble;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import uk.ac.cam.cl.group15.amble.openweathermapapi.InvalidTimeException;
 
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
