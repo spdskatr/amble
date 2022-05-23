@@ -72,6 +72,7 @@ public class MainController implements Initializable {
         homePaneController.postinit();
         walkPaneController.postInit();
         statsPaneController.postInit();
+        settingsPaneController.postInit();
     }
 
     @FXML
@@ -98,12 +99,18 @@ public class MainController implements Initializable {
     public void enterSettings() {
         mainContainer.getChildren().removeAll(settingsView);
         mainContainer.getChildren().addAll(settingsView);
+        settingsPaneController.onOpen();
     }
 
     @FXML
     public void exitSettings() {
         mainContainer.getChildren().removeAll(mainView);
         mainContainer.getChildren().addAll(mainView);
+    }
+
+    public void onSettingsChange(){
+        homePaneController.onPreferenceChange();
+        walkPaneController.onPreferenceChange();
     }
 
     public void switchPaneTo(PaneType type) {

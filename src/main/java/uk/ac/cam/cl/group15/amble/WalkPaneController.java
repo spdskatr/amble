@@ -60,6 +60,10 @@ public class WalkPaneController {
         specificLabels = List.of(specificTimeSummaryOne, specificTimeSummaryTwo, specificTimeSummaryThree);
     }
 
+    public void onPreferenceChange(){
+        //TODO: should recalculate all the walk times here
+    }
+
     @FXML
     public void initMapAndControls(Projection projection) {
 
