@@ -38,8 +38,8 @@ public class MainController implements Initializable {
     private Node homePane;
     @FXML
     private Node walkPane;
-    @FXML
-    private VBox settingsPane;
+    //@FXML
+    //private VBox settingsPane;
 
     // Controllers for sub-panes
     @FXML

@@ -9,10 +9,13 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Insets?>
 <?import javafx.collections.FXCollections?>
+
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="uk.ac.cam.cl.group15.amble.SettingsPaneController"
-      prefHeight="400.0" prefWidth="600.0" alignment="TOP_CENTER">
+      fx:controller="uk.ac.cam.cl.group15.amble.SettingsPaneController">
+<ScrollPane
+            fitToWidth="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
+    <VBox alignment="CENTER">
     <padding>
         <Insets topRightBottomLeft="50"/>
     </padding>
@@ -567,4 +570,6 @@
         </VBox>
 
     </StackPane>
+    </VBox>
+</ScrollPane>
 </VBox>
