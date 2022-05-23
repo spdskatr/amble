@@ -130,7 +130,7 @@ public class TimeSelector {
         }
 
         if(storage.firstKey().equals(pref.NEVER)){
-            System.out.println("L + Ratio + Oh no you can't walk");
+            System.out.println("L + Ratio + Oh no you can't walk"); //TODO: Actually Implement these errors lol
             return null;
         }
 

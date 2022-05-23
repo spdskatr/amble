@@ -9,7 +9,6 @@ public class forecast {
         ImportCurrentWeatherData importData = new ImportCurrentWeatherData();
         ArrayList<SimpleWeather> today = new  ArrayList<>();
         Map<LocalDateTime,ImportCurrentWeatherData> forecast = importData.getFutureForecast("Cambridge, UK");
-        int count = 0;
         for(Map.Entry<LocalDateTime,ImportCurrentWeatherData> f: forecast.entrySet()){
             if(f.getKey().getDayOfMonth() == LocalDateTime.now().getDayOfMonth()){
                 String weatherDesc = f.getValue().getWeatherDescription().toLowerCase();
@@ -51,7 +50,6 @@ public class forecast {
                 }
                 SimpleWeather weather = new SimpleWeather(weatherName, f.getKey().getHour());
                 today.add(weather);
-                count++;
             }
         }
         return today;
