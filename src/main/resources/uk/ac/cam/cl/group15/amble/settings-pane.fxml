@@ -19,13 +19,12 @@
     <padding>
         <Insets topRightBottomLeft="50"/>
     </padding>
-    <Text text="Settings"/>
     <Button onAction="#onExitSettingsButtonPressed" text="Exit settings"/>
 
     <StackPane>
         <VBox>
-            <HBox styleClass="settingsPanel">
-                <Label text="Preferences" prefWidth="3000"/>
+            <HBox styleClass="settingsPanelBig">
+                <Label text="PREFERENCES" prefWidth="3000"/>
             </HBox>
             <Button styleClass="settingsPanel" onAction="#onWeatherConfigPressed" text="Configure Weather Preferences" prefWidth="3000"> </Button>
             <StackPane fx:id="weatherConfig">

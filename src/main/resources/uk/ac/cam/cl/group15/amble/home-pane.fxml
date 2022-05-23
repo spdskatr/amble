@@ -178,43 +178,5 @@
                 </HBox>
             </VBox>
         </StackPane>
-
-        <!-- Label example -->
-        <Label fx:id="welcomeText"/>
-        <Label text="More sample text!"/>
-
-
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
-        <Label text="when the impostor is sussy"/>
     </VBox>
 </ScrollPane>

@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
+import static uk.ac.cam.cl.group15.amble.pref.*;
+
 public class SettingsPaneController {
     private MainController mainController;
 
@@ -133,22 +135,36 @@ public class SettingsPaneController {
 //Helper Functions
     public pref stringToEnum(String s){
         return switch (s) {
-            case ("Very High") -> pref.VERYHIGH;
-            case ("High") -> pref.HIGH;
-            case ("Medium") -> pref.MEDIUM;
-            case ("Low") -> pref.LOW;
-            case ("Very Low") -> pref.VERYLOW;
-            case ("Never") -> pref.NEVER;
+            case ("Very High") -> VERYHIGH;
+            case ("High") -> HIGH;
+            case ("Medium") -> MEDIUM;
+            case ("Low") -> LOW;
+            case ("Very Low") -> VERYLOW;
+            case ("Never") -> NEVER;
+            default -> null;
+        };
+    }
+
+    public String enumToString(pref p){
+        return switch (p) {
+            case VERYHIGH -> "Very High";
+            case HIGH -> "High";
+            case MEDIUM -> "Medium";
+            case LOW -> "Low";
+            case VERYLOW -> "Very Low";
+            case NEVER -> "Never";
             default -> null;
         };
     }
 
     public void setUpWDropDown(String prefName, ComboBox<String> box){
         box.getSelectionModel().selectedItemProperty().addListener((observableValue, oldPref, newPref) -> mainController.weatherPref.setPreference(prefName, stringToEnum(newPref)));
+        box.getSelectionModel().select(enumToString(mainController.weatherPref.getPreference(prefName)));
     }
 
     public void setUpTDropDown(String prefName, ComboBox<String> box){
         box.getSelectionModel().selectedItemProperty().addListener((observableValue, oldPref, newPref) -> mainController.timePref.setPreference(prefName, stringToEnum(newPref)));
+        box.getSelectionModel().select(enumToString(mainController.timePref.getPreference(prefName)));
     }
 
 //Initialisation

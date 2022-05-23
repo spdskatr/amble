@@ -36,6 +36,13 @@ ScrollPane {
     -fx-border-width: 2px;
 }
 
+.settingsPanelBig {
+    -fx-background-color: #d9fffc;
+    -fx-padding: 20;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2px;
+}
+
 .goalProgress {
     -fx-background-color: #fff3cc;
     -fx-control-inner-background: #fff3cc;
