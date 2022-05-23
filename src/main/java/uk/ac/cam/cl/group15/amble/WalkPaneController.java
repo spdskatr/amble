@@ -2,6 +2,7 @@ package uk.ac.cam.cl.group15.amble;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -19,6 +20,12 @@ public class WalkPaneController {
     public VBox walkSelector;
     @FXML
     public VBox durationSelector;
+    @FXML
+    public Label durationOneTimeSummary;
+    @FXML
+    public Label durationTwoTimeSummary;
+    @FXML
+    public Label durationThreeTimeSummary;
     private MainController mainController;
 
     private static final int ZOOM_DEFAULT = 14;
@@ -33,6 +40,14 @@ public class WalkPaneController {
     public void postInit() {
         // TODO: Remove this comment for demo
         //initMapAndControls(Projection.WEB_MERCATOR);
+
+        WalkTime halfHourTime = TimeSelector.chooseTime(mainController.forecast, 30, mainController.weatherPref, mainController.timePref);
+        WalkTime oneHourTime = TimeSelector.chooseTime(mainController.forecast, 60, mainController.weatherPref, mainController.timePref);
+        WalkTime twoHourTime = TimeSelector.chooseTime(mainController.forecast, 120, mainController.weatherPref, mainController.timePref);
+
+        durationOneTimeSummary.setText(String.valueOf(halfHourTime));
+        durationTwoTimeSummary.setText(String.valueOf(oneHourTime));
+        durationThreeTimeSummary.setText(String.valueOf(twoHourTime));
     }
 
     @FXML
@@ -73,6 +88,15 @@ public class WalkPaneController {
     }
 
     public void onDurationOneButtonClicked(ActionEvent actionEvent) {
+
+        switchToWalkSelector(actionEvent);
+    }
+
+    public void onDurationTwoButtonClicked(ActionEvent actionEvent) {
+        switchToWalkSelector(actionEvent);
+    }
+
+    public void onDurationThreeButtonClicked(ActionEvent actionEvent) {
         switchToWalkSelector(actionEvent);
     }
 }

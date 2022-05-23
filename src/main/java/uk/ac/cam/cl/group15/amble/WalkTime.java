@@ -25,5 +25,10 @@ public class WalkTime {
     public LocalTime getEndTime() {
         return endTime;
     }
+
+    @Override
+    public String toString() {
+        return startTime + " - " + endTime;
+    }
 }
 

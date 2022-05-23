@@ -53,18 +53,26 @@
                 <graphic>
                     <HBox>
                         <Label text="30 minutes" prefWidth="3000"/>
-                        <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
+                        <Label fx:id="durationOneTimeSummary" text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
                     </HBox>
                 </graphic>
             </Button>
-            <HBox styleClass="evenPanel">
-                <Label text="1 hour" prefWidth="3000"/>
-                <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
-            </HBox>
-            <HBox styleClass="oddPanel">
-                <Label text="2 hour" prefWidth="3000"/>
-                <Label text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
-            </HBox>
+            <Button styleClass="oddPanel" onAction="#onDurationTwoButtonClicked">
+                <graphic>
+                    <HBox>
+                        <Label text="1 hour" prefWidth="3000"/>
+                        <Label fx:id="durationTwoTimeSummary" text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
+                    </HBox>
+                </graphic>
+            </Button>
+            <Button styleClass="oddPanel" onAction="#onDurationThreeButtonClicked">
+                <graphic>
+                    <HBox>
+                        <Label text="2 hours" prefWidth="3000"/>
+                        <Label fx:id="durationThreeTimeSummary" text="--:-- - --:--" alignment="BASELINE_RIGHT" minWidth="200"/>
+                    </HBox>
+                </graphic>
+            </Button>
         </VBox>
     </StackPane>
     <Label text="Routes"/>
