@@ -62,6 +62,13 @@ public class WalkPaneController {
 
     public void onPreferenceChange(){
         //TODO: should recalculate all the walk times here
+        WalkTime halfHourTime = TimeSelector.chooseTime(mainController.forecast, 30, mainController.weatherPref, mainController.timePref);
+        WalkTime oneHourTime = TimeSelector.chooseTime(mainController.forecast, 60, mainController.weatherPref, mainController.timePref);
+        WalkTime twoHourTime = TimeSelector.chooseTime(mainController.forecast, 120, mainController.weatherPref, mainController.timePref);
+
+        durationOneTimeSummary.setText(String.valueOf(halfHourTime));
+        durationTwoTimeSummary.setText(String.valueOf(oneHourTime));
+        durationThreeTimeSummary.setText(String.valueOf(twoHourTime));
     }
 
     @FXML

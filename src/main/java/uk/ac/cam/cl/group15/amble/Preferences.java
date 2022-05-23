@@ -22,6 +22,7 @@ public class Preferences {
         }
         else{
             prefList.put(name, preference);
+            System.out.println(name + " has changed preference to " + preference.name());
         }
     }
 

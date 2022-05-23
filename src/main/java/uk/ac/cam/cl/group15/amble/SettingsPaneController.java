@@ -138,28 +138,17 @@ public class SettingsPaneController {
             case ("Medium") -> pref.MEDIUM;
             case ("Low") -> pref.LOW;
             case ("Very Low") -> pref.VERYLOW;
+            case ("Never") -> pref.NEVER;
             default -> null;
         };
     }
 
     public void setUpWDropDown(String prefName, ComboBox<String> box){
-        box.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldPref, String newPref){
-                mainController.weatherPref.setPreference(prefName, stringToEnum(newPref));
-                System.out.println("uwu");
-            }
-        });
+        box.getSelectionModel().selectedItemProperty().addListener((observableValue, oldPref, newPref) -> mainController.weatherPref.setPreference(prefName, stringToEnum(newPref)));
     }
 
     public void setUpTDropDown(String prefName, ComboBox<String> box){
-        box.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldPref, String newPref){
-                mainController.timePref.setPreference(prefName, stringToEnum(newPref));
-                System.out.println("uwu");
-            }
-        });
+        box.getSelectionModel().selectedItemProperty().addListener((observableValue, oldPref, newPref) -> mainController.timePref.setPreference(prefName, stringToEnum(newPref)));
     }
 
 //Initialisation
