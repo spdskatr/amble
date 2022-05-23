@@ -184,7 +184,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="00:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="0">
+                        <ComboBox fx:id="zero">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -200,7 +200,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="01:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="1">
+                        <ComboBox fx:id="one">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -216,7 +216,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="02:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="2">
+                        <ComboBox fx:id="two">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -232,7 +232,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="03:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="3">
+                        <ComboBox fx:id="three">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -248,7 +248,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="04:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="4">
+                        <ComboBox fx:id="four">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -264,7 +264,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="05:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="5">
+                        <ComboBox fx:id="five">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -280,7 +280,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="06:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="6">
+                        <ComboBox fx:id="six">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -296,7 +296,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="07:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="7">
+                        <ComboBox fx:id="seven">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -312,7 +312,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="08:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="8">
+                        <ComboBox fx:id="eight">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -328,7 +328,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="09:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="9">
+                        <ComboBox fx:id="nine">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -344,7 +344,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="10:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="10">
+                        <ComboBox fx:id="ten">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -360,7 +360,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="11:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="11">
+                        <ComboBox fx:id="eleven">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -376,7 +376,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="12:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="12">
+                        <ComboBox fx:id="twelve">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -392,7 +392,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="13:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="13">
+                        <ComboBox fx:id="thirteen">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -408,7 +408,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="14:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="14">
+                        <ComboBox fx:id="fourteen">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -424,7 +424,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="15:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="15">
+                        <ComboBox fx:id="fifteen">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -440,7 +440,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="16:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="16">
+                        <ComboBox fx:id="sixteen">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -456,7 +456,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="17:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="17">
+                        <ComboBox fx:id="seventeen">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -472,7 +472,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="18:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="18">
+                        <ComboBox fx:id="eighteen">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -488,7 +488,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="19:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="19">
+                        <ComboBox fx:id="nineteen">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -504,7 +504,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="20:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="20">
+                        <ComboBox fx:id="twenty">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -520,7 +520,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="21:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="21">
+                        <ComboBox fx:id="twentyOne">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -536,7 +536,7 @@
                     <HBox styleClass="oddPanel">
                         <Label text="22:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="22">
+                        <ComboBox fx:id="twentyTwo">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />
@@ -552,7 +552,7 @@
                     <HBox styleClass="evenPanel">
                         <Label text="23:00"/>
                         <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="23">
+                        <ComboBox fx:id="twentyThree">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Very High" />

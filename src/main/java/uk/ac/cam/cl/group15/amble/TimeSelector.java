@@ -79,8 +79,8 @@ public class TimeSelector {
             }
         }
         else{
-            if(hours == 24){
-                hours = 0;
+            if(hours >= 24){
+                hours = hours - 24;
                 if(minutes < 10){
                     endTime = "0" + hours + ":0" + minutes;
                 }
@@ -254,8 +254,8 @@ public class TimeSelector {
             }
         }
         else{
-            if(hours == 24){
-                hours = 0;
+            if(hours >= 24){
+                hours = hours - 24;
                 if(minutes < 10){
                     endTime = "0" + hours + ":0" + minutes;
                 }
