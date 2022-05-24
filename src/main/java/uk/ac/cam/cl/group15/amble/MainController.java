@@ -127,4 +127,8 @@ public class MainController implements Initializable {
         paneContainer.getChildren().addAll(nodeToSwitch);
         // TODO: Change background colour of the navigation buttons
     }
+
+    public void setTarget(double target){
+        statsPaneController.setTarget(target);
+    }
 }

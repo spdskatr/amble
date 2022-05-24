@@ -33,7 +33,7 @@ public class forecast {
                 else if(weatherDesc.equals("clear sky") || weatherDesc.equals("few clouds")){
                     weatherName = "Sunny";
                 }
-                else if(weatherDesc.equals("scattered clouds")){
+                else if(weatherDesc.equals("scattered clouds")|| weatherDesc.equals("broken clouds")){
                     weatherName = "Partly Cloudy";
                 }
                 else if(weatherDesc.contains("clouds")){

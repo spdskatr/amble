@@ -32,6 +32,10 @@ public class StatsPaneController {
         return Math.min(1, dist / target);
     }
 
+    public void setTarget(double n){
+        goalProgressBar.setProgress(getProgress(n));
+    }
+
     public void postInit() {
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Distance (km)");

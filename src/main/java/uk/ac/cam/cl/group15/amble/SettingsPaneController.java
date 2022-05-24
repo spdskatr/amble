@@ -18,6 +18,7 @@ public class SettingsPaneController {
 
     private boolean timeMenuOpen;
     private boolean weatherMenuOpen;
+    private boolean goalOpen;
 
     @FXML
     public StackPane timeConfig;
@@ -27,6 +28,12 @@ public class SettingsPaneController {
     public StackPane weatherConfig;
     @FXML
     public VBox weatherBox;
+    @FXML
+    public VBox goalBox;
+    @FXML
+    public StackPane goalConfig;
+    @FXML
+    public ComboBox<String> goalNumber;
 
     //Weather Preferences
     @FXML
@@ -132,6 +139,17 @@ public class SettingsPaneController {
         }
     }
 
+    public void onSetGoalPressed(ActionEvent actionEvent){
+        if(goalOpen){
+            goalConfig.getChildren().removeAll(goalBox);
+            goalOpen = false;
+        }
+        else{
+            goalConfig.getChildren().addAll(goalBox);
+            goalOpen = true;
+        }
+    }
+
 //Helper Functions
     public pref stringToEnum(String s){
         return switch (s) {
@@ -157,6 +175,7 @@ public class SettingsPaneController {
         };
     }
 
+
     public void setUpWDropDown(String prefName, ComboBox<String> box){
         box.getSelectionModel().selectedItemProperty().addListener((observableValue, oldPref, newPref) -> mainController.weatherPref.setPreference(prefName, stringToEnum(newPref)));
         box.getSelectionModel().select(enumToString(mainController.weatherPref.getPreference(prefName)));
@@ -171,8 +190,10 @@ public class SettingsPaneController {
     public void onOpen(){
         timeMenuOpen = false;
         weatherMenuOpen = false;
+        goalOpen = false;
         timeConfig.getChildren().removeAll(timeBox);
         weatherConfig.getChildren().removeAll(weatherBox);
+        goalConfig.getChildren().removeAll(goalBox);
     }
 
     public void postInit(){
@@ -210,5 +231,12 @@ public class SettingsPaneController {
         setUpTDropDown("21", twentyOne);
         setUpTDropDown("22", twentyTwo);
         setUpTDropDown("23", twentyThree);
+
+        goalNumber.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                mainController.setTarget(Integer.parseInt(t1));
+            }
+        });
     }
 }

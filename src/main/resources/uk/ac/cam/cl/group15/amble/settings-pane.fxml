@@ -579,6 +579,29 @@
                         </HBox>
                     </VBox>
                 </StackPane>
+
+                <Button styleClass="settingsPanel" onAction="#onSetGoalPressed" text="Set Goal" prefWidth="3000"> </Button>
+                <StackPane fx:id="goalConfig">
+                    <VBox fx:id="goalBox">
+                    <HBox styleClass="oddPanel">
+                        <Label text="How many km do you want to walk in a week?"/>
+                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="goalNumber">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="5" />
+                                    <String fx:value="10" />
+                                    <String fx:value="20" />
+                                    <String fx:value="30" />
+                                    <String fx:value="50" />
+                                    <String fx:value="70" />
+                                    <String fx:value="100"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </HBox>
+                    </VBox>
+                </StackPane>
             </VBox>
 
         </StackPane>
