@@ -23,17 +23,20 @@ public class StatsPaneController {
     private BarChart<CategoryAxis, NumberAxis> barChartTotalDistance;
     private MainController mainController;
 
+    private double walkTarget = 10.0;
+
     public void setMainController(MainController mainController) {
         this.mainController = mainController;
     }
 
-    private double getProgress(double target) {
+    private double getProgress() {
         double dist = mainController.walkingData.getTotalDistanceLastWeek();
-        return Math.min(1, dist / target);
+        return Math.min(1, dist / walkTarget);
     }
 
     public void setTarget(double n){
-        goalProgressBar.setProgress(getProgress(n));
+        walkTarget = n;
+        goalProgressBar.setProgress(getProgress());
     }
 
     public void postInit() {
@@ -51,6 +54,6 @@ public class StatsPaneController {
         }
         barChartTotalDistance.getData().clear();
         barChartTotalDistance.getData().addAll(series1);
-        goalProgressBar.setProgress(getProgress(10));
+        goalProgressBar.setProgress(getProgress());
     }
 }
