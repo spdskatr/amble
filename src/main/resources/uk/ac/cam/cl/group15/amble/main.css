@@ -36,6 +36,10 @@ ScrollPane {
     -fx-border-width: 2px;
 }
 
+.settingsPanel: hover {
+    -fx-background-color: #8be0db;
+}
+
 .settingsPanelBig {
     -fx-background-color: #f2fffa;
     -fx-padding: 10;
