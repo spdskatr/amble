@@ -37,10 +37,17 @@ ScrollPane {
 }
 
 .settingsPanelBig {
-    -fx-background-color: #d9fffc;
-    -fx-padding: 20;
+    -fx-background-color: #f2fffa;
+    -fx-padding: 10;
     -fx-border-color: #FFFFFF;
     -fx-border-width: 2px;
+}
+
+.settingsText {
+    -fx-font-weight: 900;
+    -fx-font-size: 18px;
+    -fx-text-fill: #82e0bc;
+    -fx-font-family: 'Allerta Stencil';
 }
 
 .goalProgress {

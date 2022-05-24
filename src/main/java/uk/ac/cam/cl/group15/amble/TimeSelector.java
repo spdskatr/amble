@@ -280,10 +280,4 @@ public class TimeSelector {
 
         return pair;
     }
-
-    //TODO: Work out why it's not showing walks at midnight (ask Maan if this is on purpose)
-
-    //TODO: Then sort out the preferences menu itself - make sure that Time Selector functions are all rerun upon preferences changing otherwise it'll look like it's had no effect lmao
-
-    //TODO: Maybe implement away to get the best time to walk the next day
 }

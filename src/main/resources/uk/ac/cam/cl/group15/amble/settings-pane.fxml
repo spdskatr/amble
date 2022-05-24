@@ -10,6 +10,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.collections.FXCollections?>
 
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="uk.ac.cam.cl.group15.amble.SettingsPaneController">
@@ -25,12 +26,18 @@
         <padding>
             <Insets topRightBottomLeft="50"/>
         </padding>
-        <Button onAction="#onExitSettingsButtonPressed" text="Exit settings"/>
+        <VBox alignment="CENTER_LEFT">
+        <Button onAction="#onExitSettingsButtonPressed" styleClass="navButton">
+        <graphic>
+            <FontIcon iconLiteral="fas-long-arrow-alt-left" iconSize="30"/>
+        </graphic>
+        </Button>
+        </VBox>
 
         <StackPane>
             <VBox>
                 <HBox styleClass="settingsPanelBig">
-                    <Label text="PREFERENCES" prefWidth="3000"/>
+                    <Label styleClass="settingsText" text="PREFERENCES" prefWidth="3000"/>
                 </HBox>
                 <Button styleClass="settingsPanel" onAction="#onWeatherConfigPressed" text="Configure Weather Preferences" prefWidth="3000"> </Button>
                 <StackPane fx:id="weatherConfig">
