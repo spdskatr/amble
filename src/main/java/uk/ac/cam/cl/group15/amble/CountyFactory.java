@@ -3,6 +3,7 @@ package uk.ac.cam.cl.group15.amble;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -89,13 +90,18 @@ public class CountyFactory {
         }
     }
 
+    public static County buildCounty(String county) {
+        return buildCounty(county, null);
+    }
+
     /**
      * Builds a list of a county's routes.
      * Throws `IllegalArgumentException` if the county's webpage is not accessible or not of the expected format.
      * @param county the county (as stated above)
+     * @param count the number of routes to include.
      * @return a list of the county's routes
      */
-    public static County buildCounty(String county) {
+    public static County buildCounty(String county, Integer count) {
         try {
             // obtain the county's webpage
             Document doc = Jsoup.connect(walkURL + county).get();
@@ -104,7 +110,11 @@ public class CountyFactory {
             // The first row never contains a link to a route.
             table.child(0).remove();
             // retrieve the county's routes and build a `County` object
-            List<Route> routes = table.children().stream().
+            Stream<Element> rowStream = table.children().stream();
+            if (count != null) {
+                rowStream = rowStream.limit(count);
+            }
+            List<Route> routes = rowStream.
                     map(row -> {
                         try {
                             return CountyFactory.getRouteFromRow(row);

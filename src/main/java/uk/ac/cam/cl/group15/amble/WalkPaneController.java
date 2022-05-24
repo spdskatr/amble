@@ -2,7 +2,10 @@ package uk.ac.cam.cl.group15.amble;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -30,9 +33,22 @@ public class WalkPaneController {
     public Label specificTimeSummaryTwo;
     @FXML
     public Label specificTimeSummaryThree;
+    @FXML
+    public BorderPane mapContainer;
+    @FXML
+    public Button mapLeftArrow;
+    @FXML
+    public Button mapRightArrow;
+    public Label mapTime;
+    public Label mapLocation;
+    public Label mapDistance;
 
     private List<Label> specificLabels;
     private MainController mainController;
+
+    private List<Route> routes;
+    private CoordinateLine currentLine;
+    private int currentIdx;
 
     private static final int ZOOM_DEFAULT = 14;
 
@@ -45,7 +61,7 @@ public class WalkPaneController {
 
     public void postInit() {
         // TODO: Remove this comment for demo
-        //initMapAndControls(Projection.WEB_MERCATOR);
+        initMapAndControls(Projection.WEB_MERCATOR);
 
         try {
             WalkTime halfHourTime = TimeSelector.chooseTime(mainController.forecast, 30, mainController.weatherPref, mainController.timePref);
@@ -63,6 +79,13 @@ public class WalkPaneController {
         }
 
         specificLabels = List.of(specificTimeSummaryOne, specificTimeSummaryTwo, specificTimeSummaryThree);
+        mapContainer.setPadding(
+                new Insets(15, -14, -38, -14)
+        );
+
+        routes = CountyFactory.buildCounty("Cambridgeshire", 5).getRoutes();
+        mapLeftArrow.setOnAction(e -> displayPrevRoute());
+        mapRightArrow.setOnAction(e -> displayNextRoute());
     }
 
     public void onPreferenceChange(){
@@ -86,12 +109,6 @@ public class WalkPaneController {
     @FXML
     public void initMapAndControls(Projection projection) {
 
-        County bedfordshire = CountyFactory.buildCounty("Bedfordshire");
-
-        List<Route> routes = bedfordshire.getBoundedRoutes(2, 8);
-
-        final CoordinateLine line = routes.get(6).getCoordinateLine().setColor(Color.MAGENTA).setVisible(true);
-
         mapView.initialize(Configuration.builder()
                 .projection(projection)
                 .showZoomControls(false)
@@ -99,15 +116,38 @@ public class WalkPaneController {
 
         mapView.initializedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                addLine(line);
+                currentIdx = -1;
+                displayNextRoute();
             }
         });
     }
 
-    private void addLine(CoordinateLine line) {
+    private void displayNextRoute() {
+        currentIdx = (currentIdx + 1) % routes.size();
+        updateRoute(routes.get(currentIdx));
+    }
+
+    private void displayPrevRoute() {
+        if (currentIdx == 0) {
+            currentIdx = routes.size() - 1;
+        } else {
+            currentIdx--;
+        }
+        updateRoute(routes.get(currentIdx));
+    }
+
+    private void updateRoute(Route route) {
+        if (currentLine != null) {
+            mapView.removeCoordinateLine(currentLine);
+        }
         mapView.setZoom(ZOOM_DEFAULT);
-        mapView.setCenter(line.getCoordinateStream().findFirst().get());
-        mapView.addCoordinateLine(line);
+        currentLine = route.getCoordinateLine().setColor(Color.RED).setVisible(true);
+        // nothing to see here
+        mapView.setCenter(currentLine.getCoordinateStream().findFirst().get());
+        mapView.addCoordinateLine(currentLine);
+        mapTime.setText(route.getDistance() * 12 + " minutes");
+        mapLocation.setText(route.getName());
+        mapDistance.setText(route.getDistance()+ "km");
     }
 
     public void onReturnButtonClicked(ActionEvent actionEvent) {

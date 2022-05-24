@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
 <?import com.sothawo.mapjfx.MapView?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.shape.Rectangle?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="uk.ac.cam.cl.group15.amble.WalkPaneController"
@@ -76,10 +73,29 @@
         </VBox>
     </StackPane>
     <Label text="Routes"/>
-    <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0"
-                prefWidth="350.0">
+    <BorderPane>
         <center>
-            <MapView fx:id="mapView" BorderPane.alignment="CENTER"/>
+        <BorderPane fx:id="mapContainer" styleClass="mapContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+            <center>
+                <VBox>
+                    <MapView fx:id="mapView" BorderPane.alignment="CENTER" prefWidth="360" prefHeight="380"/>
+                    <Rectangle fill="#fffcec"  translateY="-22" height="25" width="360"/>
+                </VBox>
+            </center>
+            <left>
+                <Button fx:id="mapLeftArrow" translateX="7" translateY="140" text="&lt;" styleClass="mapArrow"/>
+            </left>
+            <right>
+                <Button fx:id="mapRightArrow" translateX="-7" translateY="140" text="&gt;" styleClass="mapArrow"/>
+            </right>
+            <bottom>
+                <HBox translateX="60" spacing="20" translateY="-43">
+                    <Label fx:id="mapTime" prefWidth="100" styleClass="mapText"/>
+                    <Label fx:id="mapLocation" prefWidth="140" styleClass="mapText"/>
+                    <Label fx:id="mapDistance" prefWidth="100" styleClass="mapText"/>
+                </HBox>
+            </bottom>
+        </BorderPane>
         </center>
     </BorderPane>
 </VBox>

@@ -56,3 +56,26 @@ ScrollPane {
 .chart-bar {
     -fx-background-color: #ff9174;
 }
+
+.mapContainer {
+    -fx-background-color: #fffcec;
+}
+
+.mapArrow {
+    -fx-background-color: transparent;
+    -fx-scale-y:2.5;
+    -fx-font-weight: 900;
+    -fx-font-size: 22px;
+    -fx-text-fill: #ff9385;
+}
+
+.mapArrow:hover {
+    -fx-text-fill:#d1766b;
+}
+
+.mapText {
+    -fx-font-weight: 900;
+    -fx-font-size: 16px;
+    -fx-text-fill: #ff9385;
+    -fx-font-family: 'Allerta Stencil';
+}
