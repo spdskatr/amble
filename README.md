@@ -11,3 +11,4 @@ This is an IntelliJ Java project run with Maven. Simply run the project in Intel
 - JUnit
 - Apache Commons IO
 - MapJFX
+- OpenWeatherAPI
