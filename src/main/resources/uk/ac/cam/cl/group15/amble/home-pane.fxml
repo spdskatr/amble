@@ -26,9 +26,7 @@
             </Background>
         </background>
         <!-- Image example -->
-        <ImageView>
-            <Image url="@sunny.png" requestedWidth="300" requestedHeight="300"/>
-        </ImageView>
+        <ImageView fx:id="weatherIcon" fitWidth="300" fitHeight="300"/>
 
         <Label fx:id="displayWeather"/>
         <Label fx:id="weatherDescription"/>
@@ -45,11 +43,11 @@
         <!-- CurrentWeatherData -->
         <StackPane>
             <VBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="humidityLabel" alignment="BASELINE_LEFT" prefWidth="3000"/>
                     <Label fx:id="windSpeed" alignment="BASELINE_RIGHT" prefWidth="3000"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="airPressure" alignment="BASELINE_LEFT" prefWidth="3000"/>
                     <Label fx:id="feelsLikeLabel" alignment="BASELINE_RIGHT" prefWidth="3000"/>
                 </HBox>
@@ -59,19 +57,19 @@
         <!-- Forecasts -->
         <StackPane>
             <VBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="day1Forecast" alignment="CENTER" prefWidth="3000"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="day2Forecast" alignment="CENTER" prefWidth="3000"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="day3Forecast" alignment="CENTER" prefWidth="3000"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="day4Forecast" alignment="CENTER" prefWidth="3000"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="day5Forecast" alignment="CENTER" prefWidth="3000"/>
                 </HBox>
             </VBox>
@@ -80,99 +78,99 @@
         <!-- Hour by hour forecasts -->
         <StackPane>
             <VBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour1Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour1" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour2Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour2" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour3Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour3" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour4Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour4" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour5Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour5" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour6Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour6" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour7Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour7" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour8Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour8" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour9Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour9" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour10Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour10" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour11Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour11" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour12Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour12" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour13Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour13" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour14Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour14" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour15Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour15" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour16Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour16" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour17Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour17" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour18Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour18" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour19Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour19" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour20Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour20" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour21Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour21" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour22Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour22" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="oddPanel">
+                <HBox styleClass="mainPageOddPanel">
                     <Label fx:id="hour23Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour23" fitWidth="40" fitHeight="40"/>
                 </HBox>
-                <HBox styleClass="evenPanel">
+                <HBox styleClass="mainPageEvenPanel">
                     <Label fx:id="hour24Forecast" alignment="CENTER" prefWidth="3000"/>
                     <ImageView fx:id="imgHour24" fitWidth="40" fitHeight="40"/>
                 </HBox>

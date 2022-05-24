@@ -70,7 +70,7 @@ public class ImportCurrentWeatherData {
         setTempFeelsLike(temp.getFeelsLike());
         setHumidity(humid.getValue());
         setWindSpeed(wind.getSpeed());
-
+        setWeatherIconId(ws.getIconId());
     }
 
     //this will get the forecast for the next 5 days - and the max and min temp for those days

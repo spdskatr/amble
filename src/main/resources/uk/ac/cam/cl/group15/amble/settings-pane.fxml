@@ -13,562 +13,568 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="uk.ac.cam.cl.group15.amble.SettingsPaneController">
-<ScrollPane
-            fitToWidth="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
+<ScrollPane fitToWidth="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
     <VBox alignment="CENTER">
-    <padding>
-        <Insets topRightBottomLeft="50"/>
-    </padding>
-    <Button onAction="#onExitSettingsButtonPressed" text="Exit settings"/>
+        <background>
+            <Background>
+                <fills>
+                    <BackgroundFill fill="aquamarine"/>
+                </fills>
+            </Background>
+        </background>
+        <padding>
+            <Insets topRightBottomLeft="50"/>
+        </padding>
+        <Button onAction="#onExitSettingsButtonPressed" text="Exit settings"/>
 
-    <StackPane>
-        <VBox>
-            <HBox styleClass="settingsPanelBig">
-                <Label text="PREFERENCES" prefWidth="3000"/>
-            </HBox>
-            <Button styleClass="settingsPanel" onAction="#onWeatherConfigPressed" text="Configure Weather Preferences" prefWidth="3000"> </Button>
-            <StackPane fx:id="weatherConfig">
-                <VBox fx:id="weatherBox">
-                    <HBox styleClass="oddPanel">
-                        <Label text="Sunny"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="sunny">
-                        <items>
-                            <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="Very High" />
-                                <String fx:value="High" />
-                                <String fx:value="Medium" />
-                                <String fx:value="Low" />
-                                <String fx:value="Very Low" />
-                                <String fx:value="Never" />
-                            </FXCollections>
-                        </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="Partly Cloudy"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="partlyCloudy">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="Cloudy"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="cloudy">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="Light Rain"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="lightRain">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="Rain"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="rain">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="Snow"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="snow">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="Storm"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="storm">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="Dangerous Weather"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="danger">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="Mist"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="mist">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                </VBox>
-            </StackPane>
+        <StackPane>
+            <VBox>
+                <HBox styleClass="settingsPanelBig">
+                    <Label text="PREFERENCES" prefWidth="3000"/>
+                </HBox>
+                <Button styleClass="settingsPanel" onAction="#onWeatherConfigPressed" text="Configure Weather Preferences" prefWidth="3000"> </Button>
+                <StackPane fx:id="weatherConfig">
+                    <VBox fx:id="weatherBox">
+                        <HBox styleClass="oddPanel">
+                            <Label text="Sunny"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="sunny">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="Partly Cloudy"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="partlyCloudy">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="Cloudy"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="cloudy">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="Light Rain"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="lightRain">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="Rain"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="rain">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="Snow"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="snow">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="Storm"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="storm">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="Dangerous Weather"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="danger">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="Mist"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="mist">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                    </VBox>
+                </StackPane>
 
 
-            <Button styleClass="settingsPanel" onAction="#onConfigureTimePressed" text="Configure Recommended Time" prefWidth="3000"> </Button>
-            <StackPane fx:id="timeConfig">
-                <VBox fx:id="timeBox">
-                    <HBox styleClass="oddPanel">
-                        <Label text="00:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="zero">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="01:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="one">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="02:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="two">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="03:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="three">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="04:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="four">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="05:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="five">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="06:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="six">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="07:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="seven">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="08:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="eight">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="09:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="nine">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="10:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="ten">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="11:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="eleven">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="12:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="twelve">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="13:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="thirteen">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="14:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="fourteen">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="15:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="fifteen">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="16:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="sixteen">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="17:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="seventeen">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="18:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="eighteen">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="19:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="nineteen">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="20:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="twenty">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="21:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="twentyOne">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="oddPanel">
-                        <Label text="22:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="twentyTwo">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                    <HBox styleClass="evenPanel">
-                        <Label text="23:00"/>
-                        <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
-                        <ComboBox fx:id="twentyThree">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="Very High" />
-                                    <String fx:value="High" />
-                                    <String fx:value="Medium" />
-                                    <String fx:value="Low" />
-                                    <String fx:value="Very Low" />
-                                    <String fx:value="Never" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                    </HBox>
-                </VBox>
-            </StackPane>
-        </VBox>
+                <Button styleClass="settingsPanel" onAction="#onConfigureTimePressed" text="Configure Recommended Time" prefWidth="3000"> </Button>
+                <StackPane fx:id="timeConfig">
+                    <VBox fx:id="timeBox">
+                        <HBox styleClass="oddPanel">
+                            <Label text="00:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="zero">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="01:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="one">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="02:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="two">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="03:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="three">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="04:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="four">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="05:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="five">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="06:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="six">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="07:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="seven">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="08:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="eight">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="09:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="nine">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="10:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="ten">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="11:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="eleven">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="12:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="twelve">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="13:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="thirteen">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="14:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="fourteen">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="15:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="fifteen">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="16:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="sixteen">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="17:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="seventeen">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="18:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="eighteen">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="19:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="nineteen">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="20:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="twenty">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="21:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="twentyOne">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="oddPanel">
+                            <Label text="22:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="twentyTwo">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                        <HBox styleClass="evenPanel">
+                            <Label text="23:00"/>
+                            <Region prefHeight="10.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
+                            <ComboBox fx:id="twentyThree">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Very High" />
+                                        <String fx:value="High" />
+                                        <String fx:value="Medium" />
+                                        <String fx:value="Low" />
+                                        <String fx:value="Very Low" />
+                                        <String fx:value="Never" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                    </VBox>
+                </StackPane>
+            </VBox>
 
-    </StackPane>
+        </StackPane>
     </VBox>
 </ScrollPane>
 </VBox>

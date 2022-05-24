@@ -57,6 +57,15 @@ ScrollPane {
     -fx-background-color: #ff9174;
 }
 
+.mainPageOddPanel {
+    -fx-background-color: #ffb69c;
+    -fx-padding: 10;
+}
+.mainPageEvenPanel {
+    -fx-background-color: #e39478;
+    -fx-padding: 10;
+}
+
 .mapContainer {
     -fx-background-color: #fffcec;
 }

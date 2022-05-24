@@ -17,6 +17,8 @@ import java.util.*;
 
 public class HomePaneController {
     @FXML
+    private ImageView weatherIcon;
+    @FXML
     private Label welcomeText;
     @FXML
     private Label walkTime;
@@ -144,6 +146,10 @@ public class HomePaneController {
         feelsLikeLabel.setText("Feels Like " + Double.toString(icwd.getTempFeelsLike()) + "°");
         airPressure.setText("Air Pressure " + Double.toString(icwd.getAirPressure()) + "hPa");
 
+        Image img = new Image(HelloApplication.class.getResource(translateWeatherIconToBigIcon(icwd.getWeatherIconId())).toString(), 300, 300, false, false);
+        weatherIcon.setImage(img);
+
+
         Map<DayOfWeek, double[]> forecast5Days = icwd.getForecast5Days("Cambridge, UK");
         List<DayOfWeek> listKeys = new ArrayList<>(forecast5Days.keySet());
         day1Forecast.setText(capitalizeFirstLetter(listKeys.get(0).name()) + " \t\tL: " + Double.toString(forecast5Days.get(listKeys.get(0))[0]) + "°" + "  H: " + Double.toString(forecast5Days.get(listKeys.get(0))[1]) + "°");
@@ -206,5 +212,37 @@ public class HomePaneController {
         imgHour24.setImage(new Image("http://openweathermap.org/img/wn/" + hourByHourForecast.get(keyList.get(23)).getWeatherIconId() + "@2x.png"));
 
 
+    }
+
+    private String translateWeatherIconToBigIcon(String weatherIconId) {
+        switch (weatherIconId.substring(0, 2)) {
+            case "01":
+                // Sunny
+                return "sunny.png";
+            case "02":
+                // Few clouds
+            case "04":
+                // Broken Clouds
+                return "partly_cloudy.png";
+            case "03":
+                // Cloudy
+                return "cloudy.png";
+            case "09":
+                // Shower Rain
+                return "light_rain.png";
+            case "10":
+                // Rain
+                return "rain.png";
+            case "11":
+                // Thunderstorm
+                return "storm.png";
+            case "13":
+                // Snow
+                return "snow.png";
+            case "50":
+                // Mist
+                return "mist.png";
+        }
+        return "danger.png";
     }
 }
