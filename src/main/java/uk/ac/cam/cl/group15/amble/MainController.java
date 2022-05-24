@@ -55,6 +55,8 @@ public class MainController implements Initializable {
     public Preferences weatherPref;
     public Preferences timePref;
 
+    public WalkingData walkingData = WalkingData.sampleData();
+
     // Initialise by assigning to child controllers
     @Override
     public void initialize(URL location, ResourceBundle resources) {

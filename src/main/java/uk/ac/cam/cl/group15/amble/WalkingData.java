@@ -185,10 +185,11 @@ public class WalkingData {
 
 
     public static WalkingData sampleData() {
+        double[] DISTS = new double[] { 1.36, 0, 0.57, 1.32, 1.18, 0, 2.19 };
         WalkingData data = new WalkingData();
         LocalDateTime now = LocalDateTime.now();
-        for (int days=0; days<10;days++){
-            int dist = 100 + days*10;
+        for (int days=0; days < 7; days++){
+            double dist = DISTS[days];
             LocalDateTime endTime = now.minus(days, ChronoUnit.DAYS);
             LocalDateTime startTime = endTime.minus(2, ChronoUnit.HOURS);
             data.inputWalk(dist, startTime, endTime);

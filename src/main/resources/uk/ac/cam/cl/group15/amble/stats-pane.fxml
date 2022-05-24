@@ -26,7 +26,7 @@
     <padding>
         <Insets top="50" left="10" right="10"/>
     </padding>
-    <ProgressBar minHeight="50" progress="0.25" prefWidth="3000" styleClass="goalProgress"/>
+    <ProgressBar fx:id="goalProgressBar" minHeight="50" progress="0.25" prefWidth="3000" styleClass="goalProgress"/>
     <Label text="Goal progress"/>
     <BarChart fx:id="barChartTotalDistance" styleClass="barChart">
         <xAxis><CategoryAxis/></xAxis>
