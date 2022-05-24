@@ -43,13 +43,13 @@ public class MainController implements Initializable {
 
     // Controllers for sub-panes
     @FXML
-    private HomePaneController homePaneController;
+    public HomePaneController homePaneController;
     @FXML
-    private StatsPaneController statsPaneController;
+    public StatsPaneController statsPaneController;
     @FXML
-    private WalkPaneController walkPaneController;
+    public WalkPaneController walkPaneController;
     @FXML
-    private SettingsPaneController settingsPaneController;
+    public SettingsPaneController settingsPaneController;
 
     public ArrayList<SimpleWeather> forecast;
     public Preferences weatherPref;

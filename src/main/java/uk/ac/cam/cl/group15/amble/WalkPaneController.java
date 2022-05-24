@@ -12,6 +12,9 @@ import javafx.scene.layout.VBox;
 import com.sothawo.mapjfx.*;
 import javafx.scene.paint.Color;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.List;
 
 public class WalkPaneController {
@@ -60,7 +63,6 @@ public class WalkPaneController {
     }
 
     public void postInit() {
-        // TODO: Remove this comment for demo
         initMapAndControls(Projection.WEB_MERCATOR);
 
         try {
@@ -122,9 +124,13 @@ public class WalkPaneController {
         });
     }
 
+    public Route getCurrentRoute() {
+        return routes.get(currentIdx);
+    }
+
     private void displayNextRoute() {
         currentIdx = (currentIdx + 1) % routes.size();
-        updateRoute(routes.get(currentIdx));
+        updateRoute(getCurrentRoute());
     }
 
     private void displayPrevRoute() {
@@ -133,7 +139,7 @@ public class WalkPaneController {
         } else {
             currentIdx--;
         }
-        updateRoute(routes.get(currentIdx));
+        updateRoute(getCurrentRoute());
     }
 
     private void updateRoute(Route route) {
@@ -145,7 +151,7 @@ public class WalkPaneController {
         // nothing to see here
         mapView.setCenter(currentLine.getCoordinateStream().findFirst().get());
         mapView.addCoordinateLine(currentLine);
-        mapTime.setText(route.getDistance() * 12 + " minutes");
+        mapTime.setText(route.getTime() + " minutes");
         mapLocation.setText(route.getName());
         mapDistance.setText(route.getDistance()+ "km");
     }
@@ -188,5 +194,14 @@ public class WalkPaneController {
     public void onDurationThreeButtonClicked(ActionEvent actionEvent) {
         populateSubPanels(actionEvent, 120);
         switchToWalkSelector(actionEvent);
+    }
+
+    public void onRecordWalkPressed(ActionEvent actionEvent) {
+        Route cur = getCurrentRoute();
+        LocalDateTime endTime = LocalDateTime.now();
+        LocalDateTime startTime = endTime.minus(cur.getTime(), ChronoUnit.MINUTES);
+        mainController.walkingData.inputWalk(cur.getDistance(), startTime, endTime);
+        mainController.statsPaneController.updateStats();
+        mainController.switchPaneTo(MainController.PaneType.STATS);
     }
 }

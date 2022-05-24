@@ -5,7 +5,6 @@ module com.example.amble {
     requires org.kordamp.ikonli.core;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.ikonli.fontawesome5;
-    requires org.kordamp.bootstrapfx.core;
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
     requires org.slf4j;
