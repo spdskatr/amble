@@ -88,3 +88,16 @@ ScrollPane {
     -fx-text-fill: #ff9385;
     -fx-font-family: 'Allerta Stencil';
 }
+
+#homePane * {
+    -fx-text-fill: #000000;
+    -fx-font-family: 'Segoe UI';
+}
+
+#homePaneInnerBox {
+    -fx-background-color: linear-gradient(to bottom, #ffdccc, #9a3d2c);
+}
+
+#homePane TitledPane {
+    -fx-background: transparent;
+}

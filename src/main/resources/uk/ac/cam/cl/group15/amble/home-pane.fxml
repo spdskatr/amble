@@ -10,21 +10,15 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<ScrollPane xmlns="http://javafx.com/javafx"
+<ScrollPane
+            xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="uk.ac.cam.cl.group15.amble.HomePaneController"
-            fitToWidth="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
-    <VBox spacing="20" alignment="CENTER">
+            fitToWidth="true" vbarPolicy="NEVER" hbarPolicy="NEVER" fitToHeight="true">
+    <VBox fx:id="homePaneInnerBox" spacing="20" alignment="TOP_CENTER">
         <padding>
             <Insets topRightBottomLeft="50"/>
         </padding>
-        <background>
-            <Background>
-                <fills>
-                    <BackgroundFill fill="#ffdccc"/>
-                </fills>
-            </Background>
-        </background>
         <!-- Image example -->
         <ImageView fx:id="weatherIcon" fitWidth="300" fitHeight="300"/>
 
@@ -39,6 +33,8 @@
         <Button text="Take a walk" onAction="#onTakeWalkButtonClick"/> -->
         <Label styleClass="smallText"  text="Recommended Walk Time"/>
         <Label fx:id="walkTime" styleClass="bigTime"  text="00:00 - 00:00"/>
+
+        <TitledPane text="Details" expanded="false">
 
         <!-- CurrentWeatherData -->
         <StackPane>
@@ -176,5 +172,6 @@
                 </HBox>
             </VBox>
         </StackPane>
+        </TitledPane>
     </VBox>
 </ScrollPane>

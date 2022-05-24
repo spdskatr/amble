@@ -54,7 +54,7 @@
                     </HBox>
                 </graphic>
             </Button>
-            <Button styleClass="oddPanel" onAction="#onDurationTwoButtonClicked">
+            <Button styleClass="evenPanel" onAction="#onDurationTwoButtonClicked">
                 <graphic>
                     <HBox>
                         <Label text="1 hour" prefWidth="3000"/>
