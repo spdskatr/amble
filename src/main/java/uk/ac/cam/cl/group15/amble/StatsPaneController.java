@@ -33,6 +33,10 @@ public class StatsPaneController {
     }
 
     public void postInit() {
+        updateStats();
+    }
+
+    public void updateStats() {
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Distance (km)");
         int currentDay = LocalDateTime.now().getDayOfWeek().getValue() - 1;
@@ -41,6 +45,7 @@ public class StatsPaneController {
             currentDay = (currentDay + 1) % 7;
             series1.getData().add(new XYChart.Data<>(DAYS_OF_WEEK.get(currentDay), distances.get(currentDay)));
         }
+        barChartTotalDistance.getData().clear();
         barChartTotalDistance.getData().addAll(series1);
         goalProgressBar.setProgress(getProgress(10));
     }

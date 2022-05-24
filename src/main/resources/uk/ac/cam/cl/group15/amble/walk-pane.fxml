@@ -97,5 +97,10 @@
             </bottom>
         </BorderPane>
         </center>
+        <bottom>
+            <VBox alignment="TOP_CENTER">
+                <Button text="Record walk" onAction="#onRecordWalkPressed" styleClass="recordWalkButton"/>
+            </VBox>
+        </bottom>
     </BorderPane>
 </VBox>

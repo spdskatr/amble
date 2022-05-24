@@ -36,6 +36,8 @@ public class Route {
         return distance;
     }
 
+    public int getTime() { return distance * 12; }
+
     public Integer getDistanceBound(List<Integer> distances) {
         return distances.stream().filter(bound -> bound > distance)
                 .findFirst().orElse(null);
